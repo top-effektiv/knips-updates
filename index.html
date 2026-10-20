@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knips – der Screenshot-Knopf</title>
+<meta name="description" content="Der Screenshot-Knopf für die Arbeit mit KI: eine Taste, Bereich wählen, Strg+V. Mit Datenschutz-Filter, Text erkennen, Scroll-Aufnahme und Archiv. Für Windows.">
+<link rel="icon" href="bilder/logo.png">
+<style>
+  :root {
+    --rot: #D31313; --rot-dunkel: #A80F0F; --gelb: #FFE228;
+    --text: #222; --leise: #666; --linie: #E2E2E2; --grund: #F6F6F6; --karte: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #EEE; --leise: #AAA; --linie: #333; --grund: #161616; --karte: #1F1F1F; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+         color: var(--text); background: var(--grund); line-height: 1.6; }
+  a { color: inherit; }
+  .huelle { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* Kopfleiste */
+  .kopf { position: sticky; top: 12px; z-index: 5; margin-top: 12px; }
+  .kopf nav { display: flex; align-items: center; gap: 18px; background: var(--karte);
+              border: 1px solid var(--linie); border-radius: 14px; padding: 10px 16px; }
+  .marke { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  .marke img { width: 30px; height: 30px; }
+  .kopf .links { margin-left: auto; display: flex; gap: 18px; font-size: 15px; }
+  .kopf .links a { text-decoration: none; color: var(--leise); }
+  .kopf .links a:hover { color: var(--text); }
+  @media (max-width: 640px) { .kopf .links a.weg { display: none; } }
+
+  /* Held */
+  .held { text-align: center; padding: 64px 0 28px; }
+  .kicker { color: var(--rot); font-weight: 700; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; }
+  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.05; margin: 14px 0 16px; letter-spacing: -.02em; }
+  h1 span { color: var(--rot); }
+  .unter { font-size: clamp(17px, 2.3vw, 20px); color: var(--leise); max-width: 640px; margin: 0 auto; }
+  .knopf { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; background: var(--rot); color: #fff;
+           text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 28px; border-radius: 999px; }
+  .knopf:hover { background: var(--rot-dunkel); }
+  .klein { margin-top: 12px; font-size: 14px; color: var(--leise); }
+  .vertrauen { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; font-size: 14px; color: var(--leise); }
+
+  /* Bild in Fensterrahmen */
+  .buehne { margin: 34px auto 0; max-width: 980px; background: var(--karte); border: 1px solid var(--linie);
+            border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.08); }
+  .buehne .leiste { height: 34px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid var(--linie); }
+  .buehne .leiste i { width: 11px; height: 11px; border-radius: 50%; background: #DDD; display: block; }
+  .buehne img { display: block; width: 100%; height: auto; }
+  .bildtext { text-align: center; color: var(--leise); font-size: 14px; margin: 12px 0 0; }
+
+  /* Abschnitte */
+  section { padding: 56px 0 8px; }
+  h2 { font-size: clamp(26px, 4vw, 34px); margin: 0 0 8px; text-align: center; letter-spacing: -.01em; }
+  .zwischen { text-align: center; color: var(--leise); margin: 0 auto 28px; max-width: 620px; }
+  .raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .karte { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 20px; }
+  .karte h3 { margin: 0 0 6px; font-size: 17px; }
+  .karte p { margin: 0; color: var(--leise); font-size: 15px; }
+  .zeichen { font-size: 22px; margin-bottom: 6px; }
+  .schritt b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+               background: var(--rot); color: #fff; margin-bottom: 10px; }
+  .hinweisbild { display: block; max-width: 100%; margin: 20px auto 0; border: 1px solid var(--linie); border-radius: 8px; }
+  .taste { font-family: Consolas, monospace; background: var(--grund); border: 1px solid var(--linie);
+           border-radius: 6px; padding: 1px 7px; font-size: 14px; white-space: nowrap; }
+  table { width: 100%; border-collapse: collapse; background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; overflow: hidden; }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--linie); }
+  tr:last-child td { border-bottom: 0; }
+  td:last-child { text-align: right; }
+  .abschluss { text-align: center; padding: 64px 0; }
+  footer { border-top: 1px solid var(--linie); padding: 24px 0 40px; color: var(--leise); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="huelle kopf">
+  <nav>
+    <a class="marke" href="#"><img src="bilder/logo.png" alt="">Knips</a>
+    <div class="links">
+      <a class="weg" href="#funktionen">Funktionen</a>
+      <a class="weg" href="#einrichten">Einrichten</a>
+      <a href="#tasten">Tasten</a>
+    </div>
+  </nav>
+</div>
+
+<main class="huelle">
+  <div class="held">
+    <div class="kicker">Der Screenshot-Knopf für die Arbeit mit KI</div>
+    <h1>Zeig der KI, was du meinst.<br><span>Und nur das.</span></h1>
+    <p class="unter">Eine Taste, Bereich wählen, Strg&nbsp;+&nbsp;V. Kundendaten werden auf Knopfdruck unscharf, Zahlen bleiben lesbar.</p>
+    <a class="knopf" href="https://raw.githubusercontent.com/top-effektiv/knips-updates/main/Knips-Setup.exe">⬇&nbsp; Für Windows herunterladen</a>
+    <div class="klein">Windows 10 und 11 · etwa 25 MB · Einrichtung in einer Minute</div>
+    <div class="vertrauen"><span>🔒 Deine Bilder bleiben auf deinem Rechner</span><span>⟳ Updates kommen von selbst</span><span>🇦🇹 von TOP effektiv</span></div>
+  </div>
+
+  <div class="buehne">
+    <div class="leiste"><i></i><i></i><i></i></div>
+    <img src="bilder/knips-markieren.png" alt="Knips markiert einen Kundenbildschirm: Name, Geburtsdatum und Nummern unscharf, Depotwerte lesbar, dazu Pfeil, Rahmen und Nummer.">
+  </div>
+  <p class="bildtext">Beispiel mit erfundenen Daten: ein Druck auf „D“, und alles Persönliche ist unscharf.</p>
+
+  <section id="funktionen">
+    <h2>Alles, was du beim Arbeiten mit KI brauchst</h2>
+    <p class="zwischen">Und nichts, was dich aufhält.</p>
+    <div class="raster">
+      <div class="karte"><div class="zeichen">⌖</div><h3>Eine Taste für alles</h3><p>Bereich ziehen, Fenster anklicken oder ganzer Bildschirm. Das Bild liegt sofort im Zwischenspeicher.</p></div>
+      <div class="karte"><div class="zeichen">🛡</div><h3>Datenschutz auf Knopfdruck</h3><p>Name, Geburtsdatum, Anschrift, Kunden- und Vertragsnummern, Mail, Telefon, IBAN werden unscharf. Beträge bleiben stehen.</p></div>
+      <div class="karte"><div class="zeichen">✎</div><h3>Markieren wie gewohnt</h3><p>Pfeil, Rahmen, Nummern, Text, Textmarker, Unscharf, Zuschneiden. Alles nachträglich verschiebbar.</p></div>
+      <div class="karte"><div class="zeichen">T</div><h3>Text statt Bild</h3><p>Fehlermeldungen, Scans, Folien: Knips liest den Text heraus. Die Texterkennung läuft auf deinem Rechner.</p></div>
+      <div class="karte"><div class="zeichen">⇣</div><h3>Lange Seiten</h3><p>Knips scrollt selbst und macht aus der ganzen Seite ein PDF, das die KI Seite für Seite scharf liest.</p></div>
+      <div class="karte"><div class="zeichen">🗂</div><h3>Archiv</h3><p>Jeder Screenshot wird aufgehoben, nach Tagen sortiert. Ein Klick legt ihn wieder in den Zwischenspeicher.</p></div>
+    </div>
+  </section>
+
+  <section id="einrichten">
+    <h2>In einer Minute eingerichtet</h2>
+    <p class="zwischen">Kein Konto, keine Anmeldung, keine Einstellungen.</p>
+    <div class="raster">
+      <div class="karte schritt"><b>1</b><h3>Herunterladen</h3><p>Auf „Für Windows herunterladen“ klicken und die Datei öffnen.</p></div>
+      <div class="karte schritt"><b>2</b><h3>Windows-Hinweis wegklicken</h3><p>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</p></div>
+      <div class="karte schritt"><b>3</b><h3>Taste drücken</h3><p><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</p></div>
+    </div>
+    <img class="hinweisbild" src="bilder/knips-hinweis.png" alt="Nach dem Screenshot: Im Zwischenspeicher · Markieren · Text · Archiv">
+    <p class="bildtext">Nach jedem Screenshot entscheidest du in einem Klick: einfügen, markieren, Text herauslesen oder ins Archiv.</p>
+  </section>
+
+  <section id="tasten">
+    <h2>Die Tasten</h2>
+    <p class="zwischen">„Num“ ist der Ziffernblock rechts. Alles geht auch per Maus über das Knips-Symbol bei der Uhr.</p>
+    <table>
+      <tr><td>Screenshot</td><td><span class="taste">Strg + Num 1</span></td></tr>
+      <tr><td>Screenshot und gleich markieren</td><td><span class="taste">Strg + Num 2</span></td></tr>
+      <tr><td>Text erkennen</td><td><span class="taste">Strg + Num 3</span></td></tr>
+      <tr><td>Screenshot in 3 Sekunden (für offene Menüs)</td><td><span class="taste">Strg + Num 4</span></td></tr>
+      <tr><td>Lange Seite (Scroll-Aufnahme)</td><td><span class="taste">Strg + Num 5</span></td></tr>
+      <tr><td>Zentrale und Archiv</td><td><span class="taste">Strg + Num 0</span></td></tr>
+    </table>
+  </section>
+
+  <div class="abschluss">
+    <h2>Knipsen statt erklären.</h2>
+    <a class="knopf" href="https://raw.githubusercontent.com/top-effektiv/knips-updates/main/Knips-Setup.exe">⬇&nbsp; Für Windows herunterladen</a>
+    <div class="klein">Mac-Fassung in Vorbereitung.</div>
+  </div>
+</main>
+
+<footer>
+  Knips – der Screenshot-Knopf · TOP effektiv · Fragen: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a><br>
+  Knips hilft beim Datenschutz. Bitte vor dem Einfügen kurz drüberschauen, ob alles Persönliche unscharf ist.
+</footer>
+
+</body>
+</html>
