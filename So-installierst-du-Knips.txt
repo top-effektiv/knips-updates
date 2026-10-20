@@ -1,0 +1,42 @@
+KNIPS – DER SCREENSHOT-KNOPF
+So richtest du Knips ein (dauert etwa 1 Minute)
+================================================
+
+1. Doppelklick auf „Knips-Setup.exe“.
+
+2. Falls Windows eine blaue Warnung zeigt („Der Computer wurde durch Windows geschützt“):
+   Das ist normal bei neuen Programmen, die noch nicht weit verbreitet sind.
+   → auf „Weitere Informationen“ klicken
+   → dann auf „Trotzdem ausführen“
+
+3. Im Einrichtungs-Fenster einfach auf „Weiter“ und „Installieren“ klicken.
+   Knips startet danach von selbst.
+
+4. Fertig. Unten rechts bei der Uhr erscheint das rote Knips-Symbol.
+
+
+SO BENUTZT DU KNIPS
+-------------------
+Strg + Num 1   →  Screenshot: Bereich ziehen, oder auf ein Fenster klicken.
+                  Das Bild liegt sofort im Zwischenspeicher – mit Strg + V einfügen.
+                  Danach kannst du im kleinen Hinweis wählen: Markieren · Text · Archiv
+
+Strg + Num 2   →  Screenshot und gleich markieren (Pfeil, Rahmen, Nummern, Text, Marker,
+                  Unscharf, Datenschutz-Knopf D)
+Strg + Num 0   →  Archiv mit allen Screenshots
+
+„Num“ ist der Ziffernblock rechts auf der Tastatur (Num-Lock muss an sein).
+Kein Ziffernblock? Rechtsklick auf das Knips-Symbol bei der Uhr → alles auch per Maus.
+
+
+WAS BEIM TESTEN WICHTIG IST
+---------------------------
+Schreib Norbert kurz:
+– Hat die Einrichtung geklappt? (Gab es eine Warnung oder hat der Virenschutz gemeckert?)
+– Funktioniert Strg + Num 1 und Strg + V?
+– Was war unklar oder hat gefehlt?
+
+Deine Bilder bleiben auf deinem Rechner. Knips schickt nichts ins Internet.
+(Einzige Ausnahme: Knips schaut einmal am Tag nach, ob es eine neue Version gibt.)
+
+Wieder entfernen: Windows-Einstellungen → Apps → „Knips“ → Deinstallieren.
