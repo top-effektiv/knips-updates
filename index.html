@@ -144,9 +144,9 @@
 
   <section id="einrichten">
     <h2>In einer Minute eingerichtet</h2>
-    <p class="zwischen">Kein Konto, kein Passwort, keine Einstellungen. Nur Vorname und Mail-Adresse.</p>
+    <p class="zwischen">Kein Konto, kein Passwort, keine Einstellungen. Nur Name und Mail-Adresse.</p>
     <div class="raster">
-      <div class="karte schritt"><b>1</b><h3>Freischalten</h3><p>Unten Vorname und Mail-Adresse eintragen, dann herunterladen und die Datei öffnen.</p></div>
+      <div class="karte schritt"><b>1</b><h3>Freischalten</h3><p>Unten Name und Mail-Adresse eintragen, dann herunterladen und die Datei öffnen.</p></div>
       <div class="karte schritt"><b>2</b><h3>Windows-Hinweis wegklicken</h3><p>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</p></div>
       <div class="karte schritt"><b>3</b><h3>Taste drücken</h3><p><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</p></div>
     </div>
@@ -208,6 +208,7 @@
     <p class="zwischen">Trag dich ein, und du kannst Knips und die Stream-Deck-Taste sofort herunterladen.</p>
     <form class="anmelden" id="anmelden" novalidate>
       <label>Vorname<input name="vorname" autocomplete="given-name" required maxlength="60"></label>
+      <label>Nachname<input name="nachname" autocomplete="family-name" required maxlength="60"></label>
       <label>E-Mail-Adresse<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
       <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="haken"><input type="checkbox" name="tipps" value="ja"> Ja, schick mir ab und zu Tipps und Neues zu Knips und zur Arbeit mit KI. Abmelden geht jederzeit.</label>
@@ -224,12 +225,13 @@
     var f = document.getElementById("anmelden"), fehler = document.getElementById("fehler");
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var vorname = f.vorname.value.trim(), email = f.email.value.trim();
+      var vorname = f.vorname.value.trim(), nachname = f.nachname.value.trim(), email = f.email.value.trim();
       if (!vorname) { fehler.textContent = "Bitte deinen Vornamen eintragen."; f.vorname.focus(); return; }
+      if (!nachname) { fehler.textContent = "Bitte deinen Nachnamen eintragen."; f.nachname.focus(); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fehler.textContent = "Bitte eine gültige Mail-Adresse eintragen."; f.email.focus(); return; }
       fehler.textContent = "";
       var knopf = f.querySelector("button"); knopf.disabled = true; knopf.textContent = "Einen Moment …";
-      var daten = new URLSearchParams({ vorname: vorname, email: email, tipps: f.tipps.checked ? "ja" : "nein", website: f.website.value });
+      var daten = new URLSearchParams({ vorname: vorname, nachname: nachname, email: email, tipps: f.tipps.checked ? "ja" : "nein", website: f.website.value });
       var weiter = function () { location.href = "danke.html"; };
       fetch(ZIEL, { method: "POST", mode: "no-cors", body: daten }).then(weiter, weiter);
       setTimeout(weiter, 4000);
