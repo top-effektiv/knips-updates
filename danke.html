@@ -37,6 +37,14 @@
   .taste { font-family: Consolas, monospace; background: var(--grund); border: 1px solid var(--linie);
            border-radius: 6px; padding: 1px 7px; font-size: 14px; white-space: nowrap; }
   .tastenbild { width: 56px; height: 56px; border-radius: 12px; }
+  .fragen-titel { font-size: 22px; margin: 34px 0 12px; }
+  .fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; margin-bottom: 8px; padding: 0 18px; }
+  .fragen summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; }
+  .fragen summary::-webkit-details-marker { display: none; }
+  .fragen summary::before { content: "▸"; color: var(--rot); display: inline-block; width: 18px; transition: transform .15s; }
+  .fragen details[open] summary::before { transform: rotate(90deg); }
+  .fragen details p { margin: 0 0 14px 18px; color: var(--leise); font-size: 15px; }
+  .nochfragen { color: var(--leise); font-size: 15px; margin-top: 14px; }
   footer { border-top: 1px solid var(--linie); margin-top: 32px; padding-top: 20px; color: var(--leise); font-size: 14px; text-align: center; }
 </style>
 </head>
@@ -67,6 +75,43 @@
       <a class="knopf zweit" href="streamdeck/Knips-Taste-288.png" download>Nur das Tastenbild</a>
     </div>
   </div>
+
+  <div class="karte">
+    <h2>3. Knips an die Taskleiste heften (wenn du magst)</h2>
+    <p>Windows lässt Programme das nicht selbst machen, du brauchst dafür zwei Klicks:</p>
+    <ol>
+      <li>Startmenü öffnen und <b>Knips</b> eintippen.</li>
+      <li>Rechtsklick auf Knips → <b>„An Taskleiste anheften“</b>.</li>
+    </ol>
+    <p style="margin:0">Ein Klick auf das Symbol öffnet dann die Knips-Zentrale mit all deinen Screenshots.</p>
+  </div>
+
+  <h2 class="fragen-titel">Wenn etwas hakt</h2>
+  <div class="fragen">
+    <details><summary>Wo ist Knips nach der Installation?</summary>
+      <p>Knips läuft im Hintergrund, das Symbol (rotes Quadrat) sitzt unten rechts bei der Uhr. Siehst du es nicht, klick auf das kleine <b>^</b> neben der Uhr, dort versteckt Windows es gern. Tipp: Zieh es von dort mit der Maus neben die Uhr, dann bleibt es sichtbar.</p></details>
+    <details><summary><span class="taste">Strg</span> + <span class="taste">Num 1</span> tut nichts</summary>
+      <p>Drück einmal die Taste <b>Num</b> (oder „Num Lock“) über dem Ziffernblock, damit der Ziffernblock eingeschaltet ist. Hilft das nicht, benutzt ein anderes Programm dieselbe Taste: Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Einstellungen …“</b> → in das Feld der Taste klicken und eine andere Kombination drücken.</p></details>
+    <details><summary>Mein Laptop hat keinen Ziffernblock</summary>
+      <p>Kein Problem. Ein Klick auf das Knips-Symbol bei der Uhr macht sofort einen Screenshot. Oder du legst dir eine eigene Taste fest: Rechtsklick auf das Knips-Symbol → <b>„Einstellungen …“</b> → in das Feld klicken und die gewünschte Kombination drücken. Ein Stream Deck braucht ohnehin keinen Ziffernblock.</p></details>
+    <details><summary>Die Stream-Deck-Taste tut nichts</summary>
+      <p>Knips muss laufen (Symbol bei der Uhr). Die fertige Taste braucht Stream Deck ab Version 6.8. Hast du in Knips die Taste geändert, trag die neue Kombination auch im Stream Deck ein: Taste anklicken → ins Feld „Hotkey“ klicken → Kombination drücken.</p></details>
+    <details><summary>Wo finde ich meine Screenshots?</summary>
+      <p>In der Knips-Zentrale: <span class="taste">Strg</span> + <span class="taste">Num 0</span>, Klick auf das angeheftete Knips-Symbol in der Taskleiste, oder Rechtsklick auf das Symbol bei der Uhr → „Zentrale &amp; Archiv öffnen“. Als Dateien liegen sie im Ordner <b>Bilder → Screenshot-Knopf</b>, ein Ordner pro Tag.</p></details>
+    <details><summary>Wie mache ich Kundendaten unscharf?</summary>
+      <p>Mit <span class="taste">Strg</span> + <span class="taste">Num 2</span> knipsen, dann im Bearbeiten-Fenster die Taste <b>D</b> drücken. Was unkenntlich wird (Namen, Adresse, IBAN …), legst du unter „Einstellungen …“ fest. Bitte vor dem Einfügen kurz drüberschauen.</p></details>
+    <details><summary>Muss ich Updates selbst holen?</summary>
+      <p>Nein. Knips schaut einmal am Tag nach und fragt dich, wenn es etwas Neues gibt. Ein Klick, fertig.</p></details>
+    <details><summary>Brauche ich Administrator-Rechte?</summary>
+      <p>Nein, Knips installiert sich nur für dich. Manche Firmen sperren neue Programme trotzdem, dann hilft deine IT.</p></details>
+    <details><summary>Mein Virenschutz meldet sich</summary>
+      <p>Das passiert bei neuen Programmen manchmal, weil sie noch unbekannt sind. Ich prüfe jede Knips-Fassung vor dem Ausliefern mit Microsoft Defender. Bei Fragen schreib mir einfach.</p></details>
+    <details><summary>Wie entferne ich Knips wieder?</summary>
+      <p>Windows-Einstellungen → <b>Apps</b> → <b>Installierte Apps</b> → Knips → <b>Deinstallieren</b>. Deine Screenshots im Ordner „Bilder“ bleiben erhalten.</p></details>
+    <details><summary>Ich will Knips auf einem zweiten Rechner</summary>
+      <p>Speicher dir diese Seite als Lesezeichen und lade Knips dort einfach noch einmal herunter.</p></details>
+  </div>
+  <p class="nochfragen">Noch eine Frage? Schreib an <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a></p>
 
   <footer>
     Fragen? <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a> · <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
