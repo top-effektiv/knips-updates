@@ -66,7 +66,7 @@
   .bildtext { text-align: center; color: var(--leise); font-size: 14px; margin: 12px 0 0; }
 
   /* Abschnitte */
-  section { padding: 56px 0 8px; }
+  section { padding: 56px 0 8px; scroll-margin-top: 70px; }
   h2 { font-size: clamp(26px, 4vw, 34px); margin: 0 0 8px; text-align: center; letter-spacing: -.01em; }
   .zwischen { text-align: center; color: var(--leise); margin: 0 auto 28px; max-width: 620px; }
   .raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
@@ -84,6 +84,18 @@
   tr:last-child td { border-bottom: 0; }
   td:last-child { text-align: right; }
   .abschluss { text-align: center; padding: 64px 0; }
+  .anmelden { max-width: 440px; margin: 0 auto; text-align: left; background: var(--karte); border: 1px solid var(--linie);
+              border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
+  .anmelden label { display: grid; gap: 4px; font-size: 15px; font-weight: 600; }
+  .anmelden input[name] { font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 8px;
+                          background: var(--grund); color: var(--text); }
+  .anmelden input:focus { outline: 2px solid var(--rot); outline-offset: 1px; }
+  .anmelden .haken { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; color: var(--leise); font-size: 14px; }
+  .anmelden .haken input { margin-top: 4px; }
+  .anmelden .knopf { margin-top: 4px; justify-content: center; border: 0; cursor: pointer; font-family: inherit; }
+  .anmelden .klein { margin: 0; }
+  .anmelden .falle { position: absolute; left: -9999px; }
+  .fehler { color: var(--rot); margin: 0; font-size: 14px; min-height: 0; }
   footer { border-top: 1px solid var(--linie); padding: 24px 0 40px; color: var(--leise); font-size: 14px; text-align: center; }
 </style>
 </head>
@@ -106,7 +118,7 @@
     <div class="kicker">Knips – der 1-Klick-Screenshot</div>
     <h1>Ein Klick – und dein Screenshot<br><span>ist fertig für die KI.</span></h1>
     <p class="unter">Eine Taste, Bereich wählen, Strg&nbsp;+&nbsp;V. Kundendaten werden auf Knopfdruck unscharf, Zahlen bleiben lesbar.</p>
-    <a class="knopf" href="https://raw.githubusercontent.com/top-effektiv/knips-updates/main/Knips-Setup.exe">⬇&nbsp; Kostenlos herunterladen</a>
+    <a class="knopf" href="#holen">⬇&nbsp; Kostenlos holen</a>
     <div class="klein">für Windows 10 und 11 · etwa 25 MB · Einrichtung in einer Minute</div>
     <div class="vertrauen"><span>🔒 Deine Bilder bleiben auf deinem Rechner</span><span>⟳ Updates kommen von selbst</span><span>🇦🇹 von TOP effektiv</span></div>
   </div>
@@ -132,9 +144,9 @@
 
   <section id="einrichten">
     <h2>In einer Minute eingerichtet</h2>
-    <p class="zwischen">Kein Konto, keine Anmeldung, keine Einstellungen.</p>
+    <p class="zwischen">Kein Konto, kein Passwort, keine Einstellungen. Nur Vorname und Mail-Adresse.</p>
     <div class="raster">
-      <div class="karte schritt"><b>1</b><h3>Herunterladen</h3><p>Auf „Kostenlos herunterladen“ klicken und die Datei öffnen.</p></div>
+      <div class="karte schritt"><b>1</b><h3>Freischalten</h3><p>Unten Vorname und Mail-Adresse eintragen, dann herunterladen und die Datei öffnen.</p></div>
       <div class="karte schritt"><b>2</b><h3>Windows-Hinweis wegklicken</h3><p>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</p></div>
       <div class="karte schritt"><b>3</b><h3>Taste drücken</h3><p><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</p></div>
     </div>
@@ -164,12 +176,12 @@
         <div class="tastenbild"><img src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste: rotes Quadrat mit weißen Ecken und gelbem Punkt">
           <div><h3>Fertige Taste</h3><p class="leise" style="margin:0">Bild und Tastenkürzel sind schon drin.</p></div></div>
         <ol>
-          <li>Fertige Knips-Taste herunterladen.</li>
+          <li>Knips freischalten, dann die fertige Knips-Taste herunterladen.</li>
           <li>Stream-Deck-Programm öffnen und die Datei auf eine freie Taste ziehen. Oder: Rechtsklick auf die freie Taste → „Aktion importieren …“.</li>
           <li>Taste drücken, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen.</li>
         </ol>
         <div class="knopfreihe">
-          <a class="knopf klein-knopf" href="streamdeck/Knips-Taste.streamDeckAction" download>⬇&nbsp; Fertige Knips-Taste</a>
+          <a class="knopf klein-knopf" href="#holen">⬇&nbsp; Mit Knips freischalten</a>
         </div>
         <p class="klein" style="text-align:left">Braucht Stream Deck ab Version 6.8.</p>
       </div>
@@ -184,18 +196,46 @@
         <p class="klein" style="text-align:left">Bleibt das Feld leer? Dann hat Knips das Kürzel geschnappt. Knips kurz beenden (Knips-Symbol bei der Uhr → Beenden), Kürzel eintragen, Knips über das Startmenü wieder starten.<br>
         Tastenbild: Rechtsklick auf das Bild der Taste → „Bilddatei auswählen“.</p>
         <div class="knopfreihe">
-          <a class="knopf klein-knopf zweit" href="streamdeck/Knips-Taste-288.png" download>⬇&nbsp; Nur das Tastenbild</a>
+          <a class="knopf klein-knopf zweit" href="#holen">Tastenbild: nach dem Freischalten</a>
         </div>
       </div>
     </div>
     <p class="zwischen" style="margin-top:22px">Noch kein Stream Deck? Ich arbeite mit dem Stream Deck XL. <a href="https://top-effektiv-kloiber.com/ausstattung/#elgato-stream-deck-xl">Zu meiner Ausstattung →</a></p>
   </section>
 
-  <div class="abschluss">
-    <h2>Knipsen statt erklären.</h2>
-    <a class="knopf" href="https://raw.githubusercontent.com/top-effektiv/knips-updates/main/Knips-Setup.exe">⬇&nbsp; Kostenlos herunterladen</a>
+  <section id="holen" class="abschluss">
+    <h2>Knips kostenlos holen</h2>
+    <p class="zwischen">Trag dich ein, und du kannst Knips und die Stream-Deck-Taste sofort herunterladen.</p>
+    <form class="anmelden" id="anmelden" novalidate>
+      <label>Vorname<input name="vorname" autocomplete="given-name" required maxlength="60"></label>
+      <label>E-Mail-Adresse<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="haken"><input type="checkbox" name="tipps" value="ja"> Ja, schick mir ab und zu Tipps und Neues zu Knips und zur Arbeit mit KI. Abmelden geht jederzeit.</label>
+      <button class="knopf" type="submit">Jetzt freischalten</button>
+      <p class="fehler" id="fehler" role="alert"></p>
+      <p class="klein">Deine Angaben landen nur bei mir (TOP effektiv). Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
+    </form>
     <div class="klein">für Windows 10 und 11 · Mac-Fassung in Vorbereitung</div>
-  </div>
+  </section>
+  <script>
+  // Anmeldung geht an Zapier → Zoho CRM (Stichwort „Knips“), danach Danke-Seite mit den Downloads
+  (function () {
+    var ZIEL = "https://hooks.zapier.com/hooks/catch/185093/NNwRAxYEKjipXsfl/";
+    var f = document.getElementById("anmelden"), fehler = document.getElementById("fehler");
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var vorname = f.vorname.value.trim(), email = f.email.value.trim();
+      if (!vorname) { fehler.textContent = "Bitte deinen Vornamen eintragen."; f.vorname.focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fehler.textContent = "Bitte eine gültige Mail-Adresse eintragen."; f.email.focus(); return; }
+      fehler.textContent = "";
+      var knopf = f.querySelector("button"); knopf.disabled = true; knopf.textContent = "Einen Moment …";
+      var daten = new URLSearchParams({ vorname: vorname, email: email, tipps: f.tipps.checked ? "ja" : "nein", website: f.website.value });
+      var weiter = function () { location.href = "danke.html"; };
+      fetch(ZIEL, { method: "POST", mode: "no-cors", body: daten }).then(weiter, weiter);
+      setTimeout(weiter, 4000);
+    });
+  })();
+  </script>
 </main>
 
 <footer>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knips freigeschaltet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="bilder/logo.png">
+<style>
+  :root {
+    --rot: #D31313; --rot-dunkel: #A80F0F;
+    --text: #222; --leise: #666; --linie: #E2E2E2; --grund: #F6F6F6; --karte: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #EEE; --leise: #AAA; --linie: #333; --grund: #161616; --karte: #1F1F1F; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+         color: var(--text); background: var(--grund); line-height: 1.6; }
+  a { color: inherit; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 40px; }
+  .marke { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+  .marke img { width: 30px; height: 30px; }
+  .kicker { color: var(--rot); font-weight: 700; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; margin-top: 36px; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 10px 0 10px; letter-spacing: -.02em; }
+  .unter { color: var(--leise); font-size: 18px; margin: 0 0 28px; }
+  .karte { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 22px; margin-bottom: 14px; }
+  .karte h2 { margin: 0 0 4px; font-size: 19px; }
+  .karte p { margin: 0 0 14px; color: var(--leise); font-size: 15px; }
+  .karte ol { margin: 0 0 14px; padding-left: 20px; } .karte li { margin: 6px 0; }
+  .knopf { display: inline-flex; align-items: center; gap: 10px; background: var(--rot); color: #fff; text-decoration: none;
+           font-weight: 700; font-size: 17px; padding: 12px 24px; border-radius: 999px; }
+  .knopf:hover { background: var(--rot-dunkel); }
+  .knopf.zweit { background: transparent; color: var(--text); border: 1px solid var(--linie); font-size: 15px; padding: 9px 18px; }
+  .knopf.zweit:hover { background: var(--grund); }
+  .reihe { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .taste { font-family: Consolas, monospace; background: var(--grund); border: 1px solid var(--linie);
+           border-radius: 6px; padding: 1px 7px; font-size: 14px; white-space: nowrap; }
+  .tastenbild { width: 56px; height: 56px; border-radius: 12px; }
+  footer { border-top: 1px solid var(--linie); margin-top: 32px; padding-top: 20px; color: var(--leise); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
+
+  <div class="kicker">Freigeschaltet</div>
+  <h1>Danke, Knips gehört dir.</h1>
+  <p class="unter">Hier sind deine Downloads. Speicher dir diese Seite, falls du Knips auf einem zweiten Rechner einrichten willst.</p>
+
+  <div class="karte">
+    <h2>1. Knips für Windows</h2>
+    <ol>
+      <li>Herunterladen und die Datei öffnen.</li>
+      <li>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</li>
+      <li><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</li>
+    </ol>
+    <a class="knopf" href="Knips-Setup.exe" download>⬇&nbsp; Knips herunterladen</a>
+  </div>
+
+  <div class="karte">
+    <h2>2. Taste fürs Stream Deck</h2>
+    <p>Datei auf eine freie Taste im Stream-Deck-Programm ziehen. Bild und Tastenkürzel sind schon drin (ab Stream Deck 6.8).</p>
+    <div class="reihe">
+      <img class="tastenbild" src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste">
+      <a class="knopf" href="streamdeck/Knips-Taste.streamDeckAction" download>⬇&nbsp; Fertige Knips-Taste</a>
+      <a class="knopf zweit" href="streamdeck/Knips-Taste-288.png" download>Nur das Tastenbild</a>
+    </div>
+  </div>
+
+  <footer>
+    Fragen? <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a> · <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+</main>
+</body>
+</html>
