@@ -1,0 +1,45 @@
+{
+ "1.1.12": [
+  "Updates sind jetzt schneller: Knips lädt sie still vor und zeigt dir vorher, was neu ist.\nDu sagst nur noch „Jetzt aktualisieren“ — fertig in Sekunden.",
+  "Neu oben rechts in der Zentrale: „✨ Neuigkeiten“. Der rote Punkt zeigt, dass es Neuerungen gibt,\nein Klick zeigt, was sich in den letzten Versionen verbessert hat.",
+  "Wartet ein Update, steht dort ein roter Knopf „⇩ Update“. Ein Klick, und Knips aktualisiert sich."
+ ],
+ "1.1.11": [
+  "Klick auf das Knips-Symbol bei der Uhr öffnet jetzt die Zentrale.\nDen Screenshot startest du wie gewohnt mit Strg+Num1, der Stream-Deck-Taste oder im Menü.",
+  "Scroll-Screenshot klappt jetzt auch mit kleinen Bereichen und auf Notebooks lückenlos."
+ ],
+ "1.1.10": [
+  "Neu in ⚙ Einstellungen → Datenschutz: „Immer unkenntlich“.\nTrag dort Kundennamen oder Firmen ein (mit Komma). Knips macht sie bei Taste D, „automatisch“\nund „Text herauslesen“ unkenntlich — auch wenn kein „Herr“ oder „Name:“ davorsteht."
+ ],
+ "1.1.9": [
+  "Zentrale öffnen nach dem Knipsen: Dein neuester Screenshot liegt gleich zum Bearbeiten da.\nKein Suchen mehr unter „Alle Bilder“ oder „Heute“."
+ ],
+ "1.1.8": [
+  "„📄 Als PDF ▾“ bei Scroll-Screenshots: in den Zwischenspeicher (für die KI)\noder „Speichern unter …“ als PDF-Datei.",
+  "Auch „💾 Speichern“ kennt jetzt den Dateityp PDF."
+ ],
+ "1.1.7": [
+  "Aufgeräumt: „⚙ Einstellungen“ unten öffnet jetzt ein richtiges Fenster —\nDatenschutz (was unkenntlich wird) und Tasten.",
+  "Neue Zentrale wie Snagit: links immer die Navigation (Alle Bilder, Tage, Stichwörter, Ordner),\noben „Neuer Screenshot“ und „Bearbeiten“. Beim Bearbeiten blätterst du mit ◀ ▶,\nmit ☰ klappst du das linke Menü für mehr Platz ein.",
+  "Am Knopf „Datenschutz“ gibt es ein kleines ▾ mit allem zum Datenschutz.",
+  "Alle Knöpfe oben stehen auf einer Linie."
+ ],
+ "1.1.6": [
+  "Neu: Datenschutz-Einstellungen — du legst selbst fest, was Knips unkenntlich macht\n(z. B. Adresse sichtbar lassen). Unten in der Zentrale oder im Menü bei der Uhr.",
+  "Die Auswahl gilt überall gleich: Taste D, „Datenschutz immer“ und „Text herauslesen“."
+ ],
+ "1.1.5": [
+  "Nach dem Knipsen nur noch ein kurzes „✓ Kopiert“ — keine Leiste mehr, nichts zu schließen.\nMarkieren, „📋 Text herauslesen“ und „Als PDF“ findest du in der Zentrale.",
+  "Stichwort für Events: vorher „Ab jetzt: Espresso“ setzen — jeder Screenshot bekommt es,\nam Ende mit einem Klick alle herunterladen.",
+  "Stichwörter auch nachträglich vergeben: Rechtsklick auf ein Bild.",
+  "Mehrere Bilder auswählen: in „Alle Bilder“ die Kästchen ☐ anklicken (oder einen ganzen Tag)\nund oben auf „Herunterladen“ — du wählst, wohin (Enter = Downloads), sie kommen in einen eigenen Ordner.",
+  "Schalter „Auch in Downloads“: jeder Screenshot liegt zusätzlich in deinem Download-Ordner —\nbereit zum Hochladen in die KI oder als Mail-Anhang, ohne erst zu speichern.",
+  "Dieses Fenster: nach jedem Update siehst du, was neu ist."
+ ],
+ "1.1.4": [
+  "Neue Zentrale: Werkzeuge oben, Bild in der Mitte, Tage links zum Aufklappen.",
+  "Jede Markierung anklicken und mit Entf entfernen; Pfeil-Enden und Ecken ziehen.",
+  "Text herauslesen ersetzt Kundendaten durch Platzhalter.",
+  "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
+ ]
+}

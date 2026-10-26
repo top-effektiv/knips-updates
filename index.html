@@ -84,6 +84,13 @@
   tr:last-child td { border-bottom: 0; }
   td:last-child { text-align: right; }
   .abschluss { text-align: center; padding: 64px 0; }
+  .neuigkeiten { max-width: 720px; margin: 0 auto; background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 6px 22px; }
+  .neu-eintrag { display: grid; grid-template-columns: 170px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--linie); }
+  .neu-eintrag:last-child { border-bottom: 0; }
+  .neu-eintrag p { margin: 0; color: var(--leise); font-size: 15px; }
+  .neu-datum { font-size: 13px; font-weight: 700; color: var(--rot); white-space: nowrap; }
+  .neu-eintrag:not(:first-child) .neu-datum { color: var(--leise); }
+  @media (max-width: 560px) { .neu-eintrag { grid-template-columns: 1fr; gap: 2px; } }
   .anmelden { max-width: 440px; margin: 0 auto; text-align: left; background: var(--karte); border: 1px solid var(--linie);
               border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
   .anmelden label { display: grid; gap: 4px; font-size: 15px; font-weight: 600; }
@@ -201,6 +208,18 @@
       </div>
     </div>
     <p class="zwischen" style="margin-top:22px">Noch kein Stream Deck? Ich arbeite mit dem Stream Deck XL. <a href="https://top-effektiv-kloiber.com/ausstattung/#elgato-stream-deck-xl">Zu meiner Ausstattung →</a></p>
+  </section>
+
+  <section id="neu">
+    <h2>Was ist neu</h2>
+    <p class="zwischen">Knips wird laufend besser. Updates kommen von selbst, ein Klick genügt.</p>
+    <div class="neuigkeiten">
+      <div class="neu-eintrag"><span class="neu-datum">26.10.2026 · 1.1.12</span><p>Oben rechts in der Zentrale: „✨ Neuigkeiten“ mit rotem Punkt bei Neuerungen, und ein roter Knopf „⇩ Update“, sobald eine neue Version wartet.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">26.10.2026 · 1.1.11</span><p>Klick auf das Knips-Symbol bei der Uhr öffnet die Zentrale. Scroll-Screenshot klappt auch auf Notebooks lückenlos.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.10</span><p>„Immer unkenntlich“: Kundennamen und Firmen einmal eintragen, Knips macht sie überall unscharf.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.9</span><p>Nach dem Knipsen liegt dein neuester Screenshot in der Zentrale gleich zum Bearbeiten bereit.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.8</span><p>Scroll-Screenshots als PDF speichern oder direkt für die KI in den Zwischenspeicher legen.</p></div>
+    </div>
   </section>
 
   <section id="fragen">
