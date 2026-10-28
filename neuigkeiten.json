@@ -1,4 +1,7 @@
 {
+ "1.1.16": [
+  "Neu oben in der Zentrale: „Tastenkürzel ?“ — alle Tasten auf einen Blick,\nzum Knipsen und zum Bearbeiten. Geht auch mit der Taste ?"
+ ],
  "1.1.15": [
   "Oben rechts siehst du jetzt gleich, wenn es Neues gibt: „✨ Neu in …“ ist zartrot hinterlegt,\nbis du es angeschaut hast.",
   "Bei jeder Version steht jetzt das Datum — so siehst du, was wann dazugekommen ist.",
@@ -60,6 +63,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.16": "28.10.2026",
   "1.1.15": "28.10.2026",
   "1.1.14": "28.10.2026",
   "1.1.13": "26.10.2026",
