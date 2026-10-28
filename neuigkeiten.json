@@ -1,4 +1,11 @@
 {
+ "1.1.15": [
+  "Oben rechts siehst du jetzt gleich, wenn es Neues gibt: „✨ Neu in …“ ist zartrot hinterlegt,\nbis du es angeschaut hast.",
+  "Bei jeder Version steht jetzt das Datum — so siehst du, was wann dazugekommen ist.",
+  "Dein Profil: Klick auf den Kreis ganz oben rechts → eigenes Bild hochladen und Namen eintragen.\nDann begrüßt dich Knips persönlich.",
+  "Die Knöpfe oben haben jetzt die gewohnten Windows-Symbole (Zahnrad, Glocke, Glühbirne …).",
+  "Gibt es Neues oder ein Update, klappt oben rechts einmal eine kleine Sprechblase auf."
+ ],
  "1.1.14": [
   "Links in der Zentrale bleibt die Liste jetzt kurz, auch nach Monaten:\nHeute · Gestern · Letzte 7 Tage · die Monate · ältere Jahre. Ein Klick zeigt alle Bilder darin.",
   "Es wird nichts gelöscht — deine Screenshots bleiben alle da.",
@@ -51,5 +58,19 @@
   "Jede Markierung anklicken und mit Entf entfernen; Pfeil-Enden und Ecken ziehen.",
   "Text herauslesen ersetzt Kundendaten durch Platzhalter.",
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
- ]
+ ],
+ "_daten": {
+  "1.1.15": "28.10.2026",
+  "1.1.14": "28.10.2026",
+  "1.1.13": "26.10.2026",
+  "1.1.12": "26.10.2026",
+  "1.1.11": "26.10.2026",
+  "1.1.10": "22.10.2026",
+  "1.1.9": "22.10.2026",
+  "1.1.8": "22.10.2026",
+  "1.1.7": "21.10.2026",
+  "1.1.6": "21.10.2026",
+  "1.1.5": "21.10.2026",
+  "1.1.4": "21.10.2026"
+ }
 }
