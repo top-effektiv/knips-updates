@@ -35,8 +35,10 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 28px 0 8px; le
 .wert button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px; background: transparent; color: var(--text); cursor: pointer; }
 @media (max-width: 560px) { .wert { grid-template-columns: 1fr auto; } .wert span { grid-column: 1 / -1; } }
 .gruss { display: flex; align-items: center; gap: 18px; margin: 30px 0 0; padding: 0 22px; }
-.gruss img { flex: none; width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
+.gruss > img { flex: none; width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
 .gruss p { margin: 0; }
+.gruss-unterschrift { display: block; width: 140px; height: auto; margin: 6px 0 4px; }
+@media (prefers-color-scheme: dark) { .gruss-unterschrift { filter: brightness(2.4); } }
 .gruss-text { font-size: 19px; font-weight: 600; line-height: 1.4; margin-bottom: 6px !important; }
 .gruss-name { color: var(--leise); font-size: 16px; }
 .zweig { color: var(--leise); font-size: 15px; text-align: center; margin: 22px 0 0; }
