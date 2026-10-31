@@ -63,6 +63,12 @@
   .buehne .leiste { height: 34px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid var(--linie); }
   .buehne .leiste i { width: 11px; height: 11px; border-radius: 50%; background: #DDD; display: block; }
   .buehne img { display: block; width: 100%; height: auto; }
+  .ueberall { margin: 30px auto 0; text-align: center; }
+  .ueberall-titel { font-size: 15px; font-weight: 600; color: var(--leise); }
+  .marken { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 26px; margin-top: 16px; }
+  .marken div { width: 66px; }
+  .marken img { display: block; width: 32px; height: 32px; margin: 0 auto; }
+  .marken span { display: block; margin-top: 6px; font-size: 12.5px; color: var(--leise); }
   .bildtext { text-align: center; color: var(--leise); font-size: 14px; margin: 12px 0 0; }
 
   /* Abschnitte */
@@ -91,17 +97,15 @@
   .neu-datum { font-size: 13px; font-weight: 700; color: var(--rot); white-space: nowrap; }
   .neu-eintrag:not(:first-child) .neu-datum { color: var(--leise); }
   @media (max-width: 560px) { .neu-eintrag { grid-template-columns: 1fr; gap: 2px; } }
-  .anmelden { max-width: 440px; margin: 0 auto; text-align: left; background: var(--karte); border: 1px solid var(--linie);
-              border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
-  .anmelden label { display: grid; gap: 4px; font-size: 15px; font-weight: 600; }
-  .anmelden input[name] { font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 8px;
-                          background: var(--grund); color: var(--text); }
-  .anmelden input:focus { outline: 2px solid var(--rot); outline-offset: 1px; }
-  .anmelden .haken { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; color: var(--leise); font-size: 14px; }
-  .anmelden .haken input { margin-top: 4px; }
-  .anmelden .knopf { margin-top: 4px; justify-content: center; border: 0; cursor: pointer; font-family: inherit; }
-  .anmelden .klein { margin: 0; }
-  .anmelden .falle { position: absolute; left: -9999px; }
+  .preise { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto 22px; text-align: left; }
+  .preis { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
+  .preis.haupt { border-color: var(--rot); }
+  .preis h3 { margin: 0; font-size: 17px; }
+  .preis .schild { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--rot); margin-bottom: 6px; }
+  .preis .summe { font-size: 34px; font-weight: 700; margin: 6px 0 8px; }
+  .preis .summe span { font-size: 15px; font-weight: 400; color: var(--leise); }
+  .preis p { margin: 0 0 18px; color: var(--leise); font-size: 15px; flex: 1; }
+  .preis .knopf { margin-top: 0; justify-content: center; font-size: 16px; }
   .fehler { color: var(--rot); margin: 0; font-size: 14px; min-height: 0; }
   footer { border-top: 1px solid var(--linie); padding: 24px 0 40px; color: var(--leise); font-size: 14px; text-align: center; }
 </style>
@@ -124,9 +128,9 @@
   <div class="held">
     <div class="kicker">Knips – der 1-Klick-Screenshot</div>
     <h1>Ein Klick – und dein Screenshot<br><span>ist fertig für die KI.</span></h1>
-    <p class="unter">Eine Taste, Bereich wählen, Strg&nbsp;+&nbsp;V. Kundendaten werden auf Knopfdruck unscharf, Zahlen bleiben lesbar.</p>
-    <a class="knopf" href="#holen">⬇&nbsp; Kostenlos holen</a>
-    <div class="klein">für Windows 10 und 11 · etwa 25 MB · Einrichtung in einer Minute</div>
+    <p class="unter">Ein Klick, und das Bild liegt im Zwischenspeicher. Strg&nbsp;+&nbsp;V, und deine KI sieht es, egal ob ChatGPT, Claude oder Copilot. Genauso in WhatsApp, in der Mail und überall sonst, wo du einfügen kannst. Einfacher und freundlicher als das, was in Windows steckt. Kundendaten werden auf Knopfdruck unscharf, Zahlen bleiben lesbar.</p>
+    <a class="knopf" href="#holen">Knips holen</a>
+    <div class="klein">19 € im Jahr oder 47 € einmalig · für Windows · Einrichtung in einer Minute</div>
     <div class="vertrauen"><span>🔒 Deine Bilder bleiben auf deinem Rechner</span><span>⟳ Updates kommen von selbst</span><span>🇦🇹 von TOP effektiv</span></div>
   </div>
 
@@ -135,6 +139,18 @@
     <img src="bilder/knips-markieren.png" alt="Knips markiert einen Kundenbildschirm: Name, Geburtsdatum und Nummern unscharf, Depotwerte lesbar, dazu Pfeil, Rahmen und Nummer.">
   </div>
   <p class="bildtext">Beispiel mit erfundenen Daten: ein Druck auf „D“, und alles Persönliche ist unscharf.</p>
+
+  <div class="ueberall">
+    <div class="ueberall-titel">Einfügen, wo du arbeitest</div>
+    <div class="marken">
+      <div><img src="bilder/marken/chatgpt.svg" alt=""><span>ChatGPT</span></div>
+      <div><img src="bilder/marken/claude.svg" alt=""><span>Claude</span></div>
+      <div><img src="bilder/marken/gemini.svg" alt=""><span>Gemini</span></div>
+      <div><img src="bilder/marken/whatsapp.svg" alt=""><span>WhatsApp</span></div>
+      <div><img src="bilder/marken/linkedin.svg" alt=""><span>LinkedIn</span></div>
+      <div><img src="bilder/marken/gmail.svg" alt=""><span>Gmail</span></div>
+    </div>
+  </div>
 
   <section id="funktionen">
     <h2>Alles, was du beim Arbeiten mit KI brauchst</h2>
@@ -151,11 +167,11 @@
 
   <section id="einrichten">
     <h2>In einer Minute eingerichtet</h2>
-    <p class="zwischen">Kein Konto, kein Passwort, keine Einstellungen. Nur Name und Mail-Adresse.</p>
+    <p class="zwischen">Kein Konto, kein Passwort. Bestellnummer und Lizenzschlüssel einmal einfügen, das war es.</p>
     <div class="raster">
-      <div class="karte schritt"><b>1</b><h3>Freischalten</h3><p>Unten Name und Mail-Adresse eintragen, dann herunterladen und die Datei öffnen.</p></div>
+      <div class="karte schritt"><b>1</b><h3>Kaufen und herunterladen</h3><p>Unten deinen Preis wählen. Auf der Danke-Seite lädst du Knips herunter und öffnest die Datei.</p></div>
       <div class="karte schritt"><b>2</b><h3>Windows-Hinweis wegklicken</h3><p>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</p></div>
-      <div class="karte schritt"><b>3</b><h3>Taste drücken</h3><p><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</p></div>
+      <div class="karte schritt"><b>3</b><h3>Freischalten und loslegen</h3><p>Bestellnummer und Schlüssel von der Danke-Seite einfügen. Dann <span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, <span class="taste">Strg</span> + <span class="taste">V</span>.</p></div>
     </div>
     <img class="hinweisbild" src="bilder/knips-hinweis.png" alt="Nach dem Screenshot: Im Zwischenspeicher · Markieren · Text · Archiv">
     <p class="bildtext">Nach jedem Screenshot entscheidest du in einem Klick: einfügen, markieren, Text herauslesen oder ins Archiv.</p>
@@ -183,12 +199,12 @@
         <div class="tastenbild"><img src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste: rotes Quadrat mit weißen Ecken und gelbem Punkt">
           <div><h3>Fertige Taste</h3><p class="leise" style="margin:0">Bild und Tastenkürzel sind schon drin.</p></div></div>
         <ol>
-          <li>Knips freischalten, dann die fertige Knips-Taste herunterladen.</li>
+          <li>Knips holen, dann die fertige Knips-Taste auf der Danke-Seite herunterladen.</li>
           <li>Stream-Deck-Programm öffnen und die Datei auf eine freie Taste ziehen. Oder: Rechtsklick auf die freie Taste → „Aktion importieren …“.</li>
           <li>Taste drücken, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen.</li>
         </ol>
         <div class="knopfreihe">
-          <a class="knopf klein-knopf" href="#holen">⬇&nbsp; Mit Knips freischalten</a>
+          <a class="knopf klein-knopf" href="#holen">Mit Knips holen</a>
         </div>
         <p class="klein" style="text-align:left">Braucht Stream Deck ab Version 6.8.</p>
       </div>
@@ -203,7 +219,7 @@
         <p class="klein" style="text-align:left">Bleibt das Feld leer? Dann hat Knips das Kürzel geschnappt. Knips kurz beenden (Knips-Symbol bei der Uhr → Beenden), Kürzel eintragen, Knips über das Startmenü wieder starten.<br>
         Tastenbild: Rechtsklick auf das Bild der Taste → „Bilddatei auswählen“.</p>
         <div class="knopfreihe">
-          <a class="knopf klein-knopf zweit" href="#holen">Tastenbild: nach dem Freischalten</a>
+          <a class="knopf klein-knopf zweit" href="#holen">Tastenbild: nach dem Kauf</a>
         </div>
       </div>
     </div>
@@ -214,6 +230,7 @@
     <h2>Was ist neu</h2>
     <p class="zwischen">Knips wird laufend besser. Updates kommen von selbst, ein Klick genügt.</p>
     <div class="neuigkeiten">
+      <div class="neu-eintrag"><span class="neu-datum">31.10.2026 · 1.1.19</span><p>Neuer Look: ruhiger, moderner und aus einem Guss. Alle Fenster und Menüs sehen jetzt gleich aus. Knöpfe und Tasten bleiben, wo du sie kennst.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.16</span><p>Neu oben in der Zentrale: „Tastenkürzel ?“. Alle Tasten auf einen Blick, schön übersichtlich, zum Knipsen und zum Bearbeiten. Geht auch mit der Taste ?.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.15</span><p>Persönlicher: eigenes Profil mit Bild und Namen, Knips begrüßt dich. Neues und Updates zeigt eine kleine Sprechblase, jede Version hat ihr Datum, und die Knöpfe oben tragen die gewohnten Windows-Symbole.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.14</span><p>Dein neuer Screenshot liegt in der Zentrale sofort groß zum Bearbeiten da. Und links bleibt die Liste kurz: Heute, Gestern, Letzte 7 Tage, Monate, Jahre. Gelöscht wird nichts.</p></div>
@@ -230,55 +247,41 @@
     <h2>Kurz gefragt</h2>
     <p class="zwischen">Die Antworten auf das, was die meisten wissen wollen.</p>
     <div class="raster">
-      <div class="karte"><h3>Kostet Knips etwas?</h3><p>Nein. Knips ist kostenlos, ohne Abo und ohne Testphase.</p></div>
+      <div class="karte"><h3>Was kostet Knips?</h3><p>19 € im Jahr oder einmalig 47 €, jeweils mit allen Updates. Wer Knips schon vor dem Verkaufsstart hatte, behält es kostenlos.</p></div>
       <div class="karte"><h3>Schickt Knips meine Bilder irgendwohin?</h3><p>Nein. Deine Screenshots bleiben auf deinem Rechner. In die KI kommt nur, was du selbst mit Strg&nbsp;+&nbsp;V einfügst.</p></div>
-      <div class="karte"><h3>Wofür brauchst du meine Mail-Adresse?</h3><p>Damit ich weiß, wer Knips nutzt, und dich bei wichtigen Hinweisen erreiche. Tipps bekommst du nur, wenn du das Häkchen setzt.</p></div>
+      <div class="karte"><h3>Was passiert, wenn ich kündige?</h3><p>Knips läuft bis zum Ende deines bezahlten Jahres. Danach machst du keine neuen Screenshots mehr. Deine Bilder bleiben auf deinem Rechner und erreichbar.</p></div>
       <div class="karte"><h3>Geht das auf meinem Firmen-PC?</h3><p>Meistens ja: Knips braucht keine Administrator-Rechte. Sperrt deine Firma neue Programme, hilft deine IT.</p></div>
       <div class="karte"><h3>Mein Laptop hat keinen Ziffernblock</h3><p>Rechtsklick auf das Knips-Symbol bei der Uhr → „Ausschnitt“ reicht, oder du legst dir in den Einstellungen eine eigene Taste fest.</p></div>
-      <div class="karte"><h3>Und auf dem Mac?</h3><p>Knips gibt es im Moment nur für Windows 10 und 11. Eine Mac-Fassung ist geplant, ein Datum gibt es noch nicht.</p></div>
+      <div class="karte"><h3>Und auf dem Mac?</h3><p>Knips gibt es im Moment nur für Windows. Eine Mac-Fassung ist geplant, ein Datum gibt es noch nicht.</p></div>
     </div>
   </section>
 
   <section id="holen" class="abschluss">
-    <h2>Knips kostenlos holen</h2>
-    <p class="zwischen">Trag dich ein, und du kannst Knips und die Stream-Deck-Taste sofort herunterladen.</p>
-    <form class="anmelden" id="anmelden" novalidate>
-      <label>Vorname<input name="vorname" autocomplete="given-name" required maxlength="60"></label>
-      <label>Nachname<input name="nachname" autocomplete="family-name" required maxlength="60"></label>
-      <label>E-Mail-Adresse<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
-      <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-      <label class="haken"><input type="checkbox" name="tipps" value="ja"> Ja, schick mir ab und zu Tipps und Neues zu Knips und zur Arbeit mit KI. Abmelden geht jederzeit.</label>
-      <button class="knopf" type="submit">Jetzt freischalten</button>
-      <p class="fehler" id="fehler" role="alert"></p>
-      <p class="klein">Deine Angaben landen nur bei mir (TOP effektiv). Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
-    </form>
-    <div class="klein">für Windows 10 und 11 · Mac-Fassung in Vorbereitung</div>
+    <h2>Knips holen</h2>
+    <p class="zwischen">Such dir aus, was besser zu dir passt. Dein Wunsch landet direkt bei mir.</p>
+    <div class="preise">
+      <div class="preis haupt">
+        <div class="schild">Beliebteste Wahl</div>
+        <h3>Im Jahr</h3>
+        <div class="summe">19&nbsp;€<span> / Jahr</span></div>
+        <p>Alle Updates inklusive. Jährlich kündbar.</p>
+        <a class="knopf" href="https://www.digistore24.com/product/757565">Für 19 € im Jahr holen</a>
+      </div>
+      <div class="preis">
+        <h3>Einmalig</h3>
+        <div class="summe">47&nbsp;€<span> einmal</span></div>
+        <p>Einmal zahlen, dauerhaft nutzen. Alle Updates inklusive.</p>
+        <a class="knopf zweit" href="https://www.digistore24.com/product/757565?plan=1546901">Für 47 € einmalig holen</a>
+      </div>
+    </div>
+    <div class="klein">Kauf und Zahlung laufen über Digistore24 · 14 Tage Widerrufsrecht · für Windows · Mac-Fassung in Vorbereitung</div>
   </section>
-  <script>
-  // Anmeldung geht an Zapier → Zoho CRM (Stichwort „Knips“), danach Danke-Seite mit den Downloads
-  (function () {
-    var ZIEL = "https://hooks.zapier.com/hooks/catch/185093/NNwRAxYEKjipXsfl/";
-    var f = document.getElementById("anmelden"), fehler = document.getElementById("fehler");
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var vorname = f.vorname.value.trim(), nachname = f.nachname.value.trim(), email = f.email.value.trim();
-      if (!vorname) { fehler.textContent = "Bitte deinen Vornamen eintragen."; f.vorname.focus(); return; }
-      if (!nachname) { fehler.textContent = "Bitte deinen Nachnamen eintragen."; f.nachname.focus(); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fehler.textContent = "Bitte eine gültige Mail-Adresse eintragen."; f.email.focus(); return; }
-      fehler.textContent = "";
-      var knopf = f.querySelector("button"); knopf.disabled = true; knopf.textContent = "Einen Moment …";
-      var daten = new URLSearchParams({ vorname: vorname, nachname: nachname, email: email, tipps: f.tipps.checked ? "ja" : "nein", website: f.website.value });
-      var weiter = function () { location.href = "danke.html"; };
-      fetch(ZIEL, { method: "POST", mode: "no-cors", body: daten }).then(weiter, weiter);
-      setTimeout(weiter, 4000);
-    });
-  })();
-  </script>
 </main>
 
 <footer>
   Knips – der 1-Klick-Screenshot · TOP effektiv · Fragen: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a><br>
   Knips hilft beim Datenschutz. Bitte vor dem Einfügen kurz drüberschauen, ob alles Persönliche unscharf ist.<br>
+  Die genannten Marken gehören ihren Inhabern. Keine Verbindung zu Knips.<br>
   <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
 </footer>
 
