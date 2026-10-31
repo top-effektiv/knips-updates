@@ -33,9 +33,17 @@
 
   /* Held */
   .held { text-align: center; padding: 44px 0 0; }
-  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.05; margin: 0 0 14px; letter-spacing: -.02em; }
+  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.16; margin: 0 0 14px; letter-spacing: -.02em; }
   h1 span { color: var(--rot); }
-  .unter { font-size: clamp(18px, 2.4vw, 22px); color: var(--leise); max-width: 640px; margin: 0 auto; }
+  .unter { font-size: clamp(18px, 2.4vw, 22px); color: var(--leise); max-width: 720px; margin: 0 auto; }
+  .strich { position: relative; display: inline-block; font-style: normal; }
+  .strich svg { position: absolute; left: -2%; bottom: -.08em; width: 104%; height: .16em; overflow: visible; }
+  .strich path { fill: none; stroke: var(--rot); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round;
+                 stroke-dasharray: 1; stroke-dashoffset: 1; animation: strich-ziehen .6s ease-out .35s forwards; }
+  .unter .strich { color: var(--text); font-weight: 600; }
+  .unter .strich path { animation-delay: 1s; }
+  @keyframes strich-ziehen { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .strich path { animation: none; stroke-dashoffset: 0; } }
   .aktion { text-align: center; }
   .aktion .knopf { margin-top: 22px; }
   .film.beweis { box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 18px 46px rgba(0,0,0,.16); margin-top: 30px; }
@@ -142,8 +150,8 @@
 
 <main class="huelle">
   <div class="held">
-    <h1>Ein Klick. Ein Bild.<br><span>Und die KI versteht dich.</span></h1>
-    <p class="unter">Knips macht dein Bildschirmfoto, den Screenshot, mit einem Klick. Einfügen, und deine KI sieht sofort, was du siehst.</p>
+    <h1><em class="strich">Ein Klick.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 9 C 45 4, 120 3, 197 6"/></svg></em> Ein Bild.<br><span>Und die KI versteht dich.</span></h1>
+    <p class="unter">Knips macht dein Bildschirmfoto, den Screenshot, mit einem Klick. Einfügen, <em class="strich">fertig.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 9 C 45 4, 120 3, 197 6"/></svg></em> Deine KI sieht sofort, was du siehst.</p>
   </div>
 
 
