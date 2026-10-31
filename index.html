@@ -32,11 +32,26 @@
   @media (max-width: 640px) { .kopf .links a.weg { display: none; } }
 
   /* Held */
-  .held { text-align: center; padding: 64px 0 28px; }
-  .kicker { color: var(--rot); font-weight: 700; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; }
-  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.05; margin: 14px 0 16px; letter-spacing: -.02em; }
+  .held { text-align: center; padding: 44px 0 0; }
+  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.05; margin: 0 0 14px; letter-spacing: -.02em; }
   h1 span { color: var(--rot); }
-  .unter { font-size: clamp(17px, 2.3vw, 20px); color: var(--leise); max-width: 640px; margin: 0 auto; }
+  .unter { font-size: clamp(18px, 2.4vw, 22px); color: var(--leise); max-width: 640px; margin: 0 auto; }
+  .aktion { text-align: center; }
+  .aktion .knopf { margin-top: 22px; }
+  .film.beweis { box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 18px 46px rgba(0,0,0,.16); margin-top: 30px; }
+
+  /* Video als Hauptdarsteller */
+  .film { position: relative; margin: 26px auto 0; max-width: 980px; border-radius: 16px; overflow: hidden;
+          background: #000; box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 28px 70px rgba(0,0,0,.28); }
+  .film video { display: block; width: 100%; height: auto; }
+  .start { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer;
+           background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+           font: inherit; color: #fff; }
+  .start:hover .kreis { transform: scale(1.07); background: var(--rot-dunkel); }
+  .kreis { width: clamp(68px, 11vw, 104px); height: clamp(68px, 11vw, 104px); border-radius: 50%; background: var(--rot);
+           display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.35); transition: transform .15s; }
+  .kreis svg { width: 42%; height: 42%; margin-left: 5%; fill: #fff; }
+  .start b { font-size: clamp(15px, 2vw, 19px); background: rgba(0,0,0,.62); padding: 5px 14px; border-radius: 999px; }
   .knopf { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; background: var(--rot); color: #fff;
            text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 28px; border-radius: 999px; }
   .knopf:hover { background: var(--rot-dunkel); }
@@ -127,28 +142,16 @@
 
 <main class="huelle">
   <div class="held">
-    <div class="kicker">Knips – der 1-Klick-Screenshot</div>
-    <h1>Ein Klick – und dein Screenshot<br><span>ist fertig für die KI.</span></h1>
-    <p class="unter">Ein Klick, und das Bild liegt im Zwischenspeicher. Strg&nbsp;+&nbsp;V, und deine KI sieht es, egal ob ChatGPT, Claude oder Copilot. Genauso in WhatsApp, in der Mail und überall sonst, wo du einfügen kannst. Einfacher und freundlicher als das, was in Windows steckt. Kundendaten werden auf Knopfdruck unscharf, Zahlen bleiben lesbar.</p>
+    <h1>Ein Klick. Ein Bild.<br><span>Und die KI versteht dich.</span></h1>
+    <p class="unter">Knips macht dein Bildschirmfoto, den Screenshot, mit einem Klick. Einfügen, und deine KI sieht sofort, was du siehst.</p>
+  </div>
+
+
+
+  <div class="aktion">
     <a class="knopf" href="#holen">Knips holen</a>
     <div class="klein">19 € im Jahr oder 47 € einmalig · für Windows · Einrichtung in einer Minute</div>
-    <div class="vertrauen"><span>🔒 Deine Bilder bleiben auf deinem Rechner</span><span>⟳ Updates kommen von selbst</span><span>🇦🇹 von TOP effektiv</span></div>
   </div>
-
-  <div class="buehne">
-    <div class="leiste"><i></i><i></i><i></i></div>
-    <video controls playsinline preload="metadata" poster="video/knips-vorschau.jpg">
-      <source src="video/knips.mp4" type="video/mp4">
-    </video>
-  </div>
-  <p class="bildtext">Knips in zwei Minuten. Alle Daten im Video sind erfunden.</p>
-
-  <div class="buehne">
-    <div class="leiste"><i></i><i></i><i></i></div>
-    <img src="bilder/knips-markieren.png" alt="Knips markiert einen Kundenbildschirm: Name, Geburtsdatum und Nummern unscharf, Depotwerte lesbar, dazu Pfeil, Rahmen und Nummer.">
-  </div>
-  <p class="bildtext">Beispiel mit erfundenen Daten: ein Druck auf „D“, und alles Persönliche ist unscharf.</p>
-
   <div class="ueberall">
     <div class="ueberall-titel">Einfügen, wo du arbeitest</div>
     <div class="marken">
@@ -163,6 +166,34 @@
       <div><img src="bilder/marken/outlook.svg" alt=""><span>Outlook</span></div>
     </div>
   </div>
+  <div class="film beweis">
+    <video autoplay muted loop playsinline preload="auto" poster="video/knips-vorschau.jpg" aria-label="Kurze Vorführung: links der übliche Weg, rechts Knips, fertig in 2,5 Sekunden">
+      <source src="video/knips-rennen.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="vertrauen"><span>🔒 Deine Bilder bleiben auf deinem Rechner</span><span>⟳ Updates kommen von selbst</span><span>Aus Österreich, von TOP effektiv</span></div>
+
+  <div class="buehne">
+    <div class="leiste"><i></i><i></i><i></i></div>
+    <img src="bilder/knips-markieren.png" alt="Knips markiert einen Kundenbildschirm: Name, Geburtsdatum und Nummern unscharf, Depotwerte lesbar, dazu Pfeil, Rahmen und Nummer.">
+  </div>
+  <p class="bildtext">Beispiel mit erfundenen Daten: ein Druck auf „D“, und alles Persönliche ist unscharf.</p>
+
+
+  <section id="video">
+    <h2>Knips in zwei Minuten</h2>
+    <p class="zwischen">Echte Fälle, von der Fehlermeldung bis zu den Kundendaten.</p>
+  <div class="film">
+    <video id="film" playsinline preload="metadata" poster="video/knips-vorschau.jpg">
+      <source src="video/knips.mp4" type="video/mp4">
+    </video>
+    <button class="start" id="start" type="button" aria-label="Video abspielen">
+      <span class="kreis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l16 9-16 9z"/></svg></span>
+      <b>Knips in 2 Minuten ansehen</b>
+    </button>
+  </div>
+  <p class="bildtext">Alle Daten im Video sind erfunden.</p>
+  </section>
 
   <section id="funktionen">
     <h2>Alles, was du beim Arbeiten mit KI brauchst</h2>
@@ -243,14 +274,14 @@
     <p class="zwischen">Knips wird laufend besser. Updates kommen von selbst, ein Klick genügt.</p>
     <div class="neuigkeiten">
       <div class="neu-eintrag"><span class="neu-datum">31.10.2026 · 1.1.19</span><p>Neuer Look: ruhiger, moderner und aus einem Guss. Alle Fenster und Menüs sehen jetzt gleich aus. Knöpfe und Tasten bleiben, wo du sie kennst.</p></div>
-      <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.16</span><p>Neu oben in der Zentrale: „Tastenkürzel ?“. Alle Tasten auf einen Blick, schön übersichtlich, zum Knipsen und zum Bearbeiten. Geht auch mit der Taste ?.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.16</span><p>Neu oben in der Zentrale: „Tastenkürzel ?“. Alle Tasten auf einen Blick, schön übersichtlich, für den Screenshot und zum Bearbeiten. Geht auch mit der Taste ?.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.15</span><p>Persönlicher: eigenes Profil mit Bild und Namen, Knips begrüßt dich. Neues und Updates zeigt eine kleine Sprechblase, jede Version hat ihr Datum, und die Knöpfe oben tragen die gewohnten Windows-Symbole.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.14</span><p>Dein neuer Screenshot liegt in der Zentrale sofort groß zum Bearbeiten da. Und links bleibt die Liste kurz: Heute, Gestern, Letzte 7 Tage, Monate, Jahre. Gelöscht wird nichts.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">26.10.2026 · 1.1.13</span><p>Neu in der Zentrale: „💡 Wunsch oder Problem“. Screenshot anklicken oder eine Sprachnachricht aufnehmen, „Senden“, fertig. Es landet direkt bei uns, die Antwort kommt per Mail.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">26.10.2026 · 1.1.12</span><p>Oben rechts in der Zentrale: „✨ Neuigkeiten“ mit rotem Punkt bei Neuerungen, und ein roter Knopf „⇩ Update“, sobald eine neue Version wartet.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">26.10.2026 · 1.1.11</span><p>Klick auf das Knips-Symbol bei der Uhr öffnet die Zentrale. Scroll-Screenshot klappt auch auf Notebooks lückenlos.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.10</span><p>„Immer unkenntlich“: Kundennamen und Firmen einmal eintragen, Knips macht sie überall unscharf.</p></div>
-      <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.9</span><p>Nach dem Knipsen liegt dein neuester Screenshot in der Zentrale gleich zum Bearbeiten bereit.</p></div>
+      <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.9</span><p>Danach liegt dein neuester Screenshot in der Zentrale gleich zum Bearbeiten bereit.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">22.10.2026 · 1.1.8</span><p>Scroll-Screenshots als PDF speichern oder direkt für die KI in den Zwischenspeicher legen.</p></div>
     </div>
   </section>
@@ -288,6 +319,12 @@
     </div>
     <div class="klein">Kauf und Zahlung laufen über Digistore24 · 14 Tage Widerrufsrecht · für Windows · Mac-Fassung in Vorbereitung</div>
   </section>
+  <script>
+    document.getElementById('start').addEventListener('click', function () {
+      var film = document.getElementById('film');
+      film.controls = true; film.play(); this.remove();
+    });
+  </script>
 </main>
 
 <footer>
