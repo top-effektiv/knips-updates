@@ -1,0 +1,46 @@
+/* Gemeinsamer Look für Dankeseite, Hilfe und Stream-Deck-Seite */
+:root {
+  --rot: #D31313; --rot-dunkel: #A80F0F;
+  --text: #222; --leise: #666; --linie: #E2E2E2; --grund: #F6F6F6; --karte: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --text: #EEE; --leise: #AAA; --linie: #333; --grund: #161616; --karte: #1F1F1F; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+       color: var(--text); background: var(--grund); line-height: 1.6; }
+a { color: inherit; }
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 32px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+.marke img { width: 30px; height: 30px; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 28px 0 8px; letter-spacing: -.02em; }
+.unter { color: var(--leise); font-size: 18px; margin: 0 0 24px; }
+.karte { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 22px; margin-bottom: 14px; }
+.karte h2 { margin: 0 0 6px; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+.nr { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--text); color: var(--karte);
+      font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
+.karte p { margin: 0 0 14px; color: var(--leise); font-size: 16px; }
+.karte p:last-child { margin-bottom: 0; }
+.knopf { display: inline-flex; align-items: center; gap: 10px; background: var(--rot); color: #fff; text-decoration: none;
+         font-weight: 700; font-size: 18px; padding: 14px 28px; border-radius: 999px; }
+.knopf:hover { background: var(--rot-dunkel); }
+.knopf.zweit { background: transparent; color: var(--text); border: 1px solid var(--linie); font-size: 15px; font-weight: 600; padding: 9px 18px; }
+.knopf.zweit:hover { background: var(--grund); }
+.klein { font-size: 14px !important; }
+.film { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linie); margin-bottom: 10px; background: var(--grund); }
+.taste { font-family: Consolas, monospace; background: var(--grund); border: 1px solid var(--linie);
+         border-radius: 6px; padding: 1px 7px; font-size: 14px; white-space: nowrap; }
+.wert { display: grid; grid-template-columns: 130px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-top: 1px solid var(--linie); font-size: 15px; }
+.wert code { font-family: Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }
+.wert button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px; background: transparent; color: var(--text); cursor: pointer; }
+@media (max-width: 560px) { .wert { grid-template-columns: 1fr auto; } .wert span { grid-column: 1 / -1; } }
+.zweig { color: var(--leise); font-size: 15px; text-align: center; margin: 22px 0 0; }
+.reihe { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tastenbild { width: 56px; height: 56px; border-radius: 12px; }
+.fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; margin-bottom: 8px; padding: 0 18px; }
+.fragen summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::before { content: "▸"; color: var(--rot); display: inline-block; width: 18px; transition: transform .15s; }
+.fragen details[open] summary::before { transform: rotate(90deg); }
+.fragen details p { margin: 0 0 14px 18px; color: var(--leise); font-size: 15px; }
+footer { border-top: 1px solid var(--linie); margin-top: 28px; padding-top: 18px; color: var(--leise); font-size: 14px; text-align: center; }

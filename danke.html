@@ -6,129 +6,56 @@
 <title>Knips freigeschaltet</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="bilder/logo.png">
-<style>
-  :root {
-    --rot: #D31313; --rot-dunkel: #A80F0F;
-    --text: #222; --leise: #666; --linie: #E2E2E2; --grund: #F6F6F6; --karte: #fff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --text: #EEE; --leise: #AAA; --linie: #333; --grund: #161616; --karte: #1F1F1F; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-         color: var(--text); background: var(--grund); line-height: 1.6; }
-  a { color: inherit; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 40px; }
-  .marke { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
-  .marke img { width: 30px; height: 30px; }
-  .kicker { color: var(--rot); font-weight: 700; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; margin-top: 36px; }
-  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 10px 0 10px; letter-spacing: -.02em; }
-  .unter { color: var(--leise); font-size: 18px; margin: 0 0 28px; }
-  .karte { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 22px; margin-bottom: 14px; }
-  .karte h2 { margin: 0 0 4px; font-size: 19px; }
-  .karte p { margin: 0 0 14px; color: var(--leise); font-size: 15px; }
-  .karte ol { margin: 0 0 14px; padding-left: 20px; } .karte li { margin: 6px 0; }
-  .knopf { display: inline-flex; align-items: center; gap: 10px; background: var(--rot); color: #fff; text-decoration: none;
-           font-weight: 700; font-size: 17px; padding: 12px 24px; border-radius: 999px; }
-  .knopf:hover { background: var(--rot-dunkel); }
-  .knopf.zweit { background: transparent; color: var(--text); border: 1px solid var(--linie); font-size: 15px; padding: 9px 18px; }
-  .knopf.zweit:hover { background: var(--grund); }
-  .reihe { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .taste { font-family: Consolas, monospace; background: var(--grund); border: 1px solid var(--linie);
-           border-radius: 6px; padding: 1px 7px; font-size: 14px; white-space: nowrap; }
-  .wert { display: grid; grid-template-columns: 130px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-top: 1px solid var(--linie); font-size: 15px; }
-  .wert code { font-family: Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }
-  .wert button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px; background: transparent; color: var(--text); cursor: pointer; }
-  @media (max-width: 560px) { .wert { grid-template-columns: 1fr auto; } .wert span { grid-column: 1 / -1; } }
-  .tastenbild { width: 56px; height: 56px; border-radius: 12px; }
-  .fragen-titel { font-size: 22px; margin: 34px 0 12px; }
-  .fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; margin-bottom: 8px; padding: 0 18px; }
-  .fragen summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; }
-  .fragen summary::-webkit-details-marker { display: none; }
-  .fragen summary::before { content: "▸"; color: var(--rot); display: inline-block; width: 18px; transition: transform .15s; }
-  .fragen details[open] summary::before { transform: rotate(90deg); }
-  .fragen details p { margin: 0 0 14px 18px; color: var(--leise); font-size: 15px; }
-  .nochfragen { color: var(--leise); font-size: 15px; margin-top: 14px; }
-  footer { border-top: 1px solid var(--linie); margin-top: 32px; padding-top: 20px; color: var(--leise); font-size: 14px; text-align: center; }
-</style>
+<link rel="stylesheet" href="kauf.css">
 </head>
 <body>
 <main>
   <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
 
-  <div class="kicker">Danke für deinen Kauf</div>
   <h1>Danke, Knips gehört dir.</h1>
-  <p class="unter">Hier sind deine Downloads. Speicher dir diese Seite als Lesezeichen, dann hast du auch deinen Schlüssel immer griffbereit.</p>
-
-  <div class="karte" id="freischalten" hidden>
-    <h2>Deine Freischaltung</h2>
-    <p>Beides fragt Knips beim ersten Start. Einfach kopieren und einfügen.</p>
-    <div class="wert"><span>Bestellnummer</span><code id="wert-b"></code><button type="button" data-feld="wert-b">Kopieren</button></div>
-    <div class="wert"><span>Lizenzschlüssel</span><code id="wert-k"></code><button type="button" data-feld="wert-k">Kopieren</button></div>
-  </div>
+  <p class="unter">Vier Schritte, dann läuft es.</p>
 
   <div class="karte">
-    <h2>1. Knips für Windows</h2>
-    <ol>
-      <li>Herunterladen und die Datei öffnen.</li>
-      <li>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal.</li>
-      <li>Bestellnummer und Lizenzschlüssel im Fenster „Knips freischalten“ einfügen.</li>
-      <li><span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Fertig.</li>
-    </ol>
+    <h2><span class="nr">1</span>Knips herunterladen</h2>
+    <p>Für Windows. Danach die Datei öffnen.</p>
     <a class="knopf" href="Knips-Setup.exe" download>⬇&nbsp; Knips herunterladen</a>
+    <p class="klein" style="margin-top:14px">Gerade am Handy? Öffne deine Bestellmail von Digistore24 am PC und klick dort auf den ersten Zugangs-Link. Dann bist du wieder hier.</p>
   </div>
 
   <div class="karte">
-    <h2>2. Taste fürs Stream Deck</h2>
-    <p>Datei auf eine freie Taste im Stream-Deck-Programm ziehen. Bild und Tastenkürzel sind schon drin (ab Stream Deck 6.8).</p>
-    <div class="reihe">
-      <img class="tastenbild" src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste">
-      <a class="knopf" href="streamdeck/Knips-Taste.streamDeckAction" download>⬇&nbsp; Fertige Knips-Taste</a>
-      <a class="knopf zweit" href="streamdeck/Knips-Taste-288.png" download>Nur das Tastenbild</a>
+    <h2><span class="nr">2</span>Windows warnt dich, das ist normal</h2>
+    <p>Windows kennt neue Programme noch nicht und zeigt deshalb meist diese blaue Meldung. So geht es weiter:</p>
+    <video class="film" autoplay muted loop playsinline preload="metadata" poster="bilder/windows-warnung.jpg" width="1120" height="640" aria-label="Klick auf Weitere Informationen, danach auf Trotzdem ausführen">
+      <source src="bilder/windows-warnung.mp4" type="video/mp4">
+    </video>
+    <p class="klein">Vereinfacht nachgezeichnet. Keine Meldung bei dir? Dann geht es direkt weiter.</p>
+  </div>
+
+  <div class="karte">
+    <h2><span class="nr">3</span>Knips freischalten</h2>
+    <p>Knips fragt beim ersten Start nach diesen zwei Angaben. Einfach kopieren und einfügen.</p>
+    <div id="freischalten" hidden>
+      <div class="wert"><span>Bestellnummer</span><code id="wert-b"></code><button type="button" data-feld="wert-b">Kopieren</button></div>
+      <div class="wert"><span>Lizenzschlüssel</span><code id="wert-k"></code><button type="button" data-feld="wert-k">Kopieren</button></div>
     </div>
+    <p class="klein" style="margin-top:12px">Beides steht auch in deiner Bestellmail von Digistore24.</p>
+    <p>Dein erster Screenshot: <span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Laptop ohne Ziffernblock? Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Ausschnitt“</b>.</p>
   </div>
 
   <div class="karte">
-    <h2>3. Knips an die Taskleiste heften (wenn du magst)</h2>
-    <p>Windows lässt Programme das nicht selbst machen, du brauchst dafür zwei Klicks:</p>
-    <ol>
-      <li>Startmenü öffnen und <b>Knips</b> eintippen.</li>
-      <li>Rechtsklick auf Knips → <b>„An Taskleiste anheften“</b>.</li>
-    </ol>
-    <p style="margin:0">Ein Klick auf das Symbol öffnet dann die Knips-Zentrale mit all deinen Screenshots.</p>
+    <h2><span class="nr">4</span>Knips griffbereit machen</h2>
+    <p>Windows lässt Programme das nicht selbst machen, das sind zwei Klicks von dir:</p>
+    <video class="film" autoplay muted loop playsinline preload="metadata" poster="bilder/taskleiste.jpg" width="1120" height="640" aria-label="Knips im Startmenü suchen, Rechtsklick, An Taskleiste anheften">
+      <source src="bilder/taskleiste.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <h2 class="fragen-titel">Wenn etwas hakt</h2>
-  <div class="fragen">
-    <details><summary>Wo ist Knips nach der Installation?</summary>
-      <p>Knips läuft im Hintergrund, das Symbol (rotes Quadrat) sitzt unten rechts bei der Uhr. Siehst du es nicht, klick auf das kleine <b>^</b> neben der Uhr, dort versteckt Windows es gern. Tipp: Zieh es von dort mit der Maus neben die Uhr, dann bleibt es sichtbar.</p></details>
-    <details><summary><span class="taste">Strg</span> + <span class="taste">Num 1</span> tut nichts</summary>
-      <p>Drück einmal die Taste <b>Num</b> (oder „Num Lock“) über dem Ziffernblock, damit der Ziffernblock eingeschaltet ist. Hilft das nicht, benutzt ein anderes Programm dieselbe Taste: Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Einstellungen …“</b> → in das Feld der Taste klicken und eine andere Kombination drücken.</p></details>
-    <details><summary>Mein Laptop hat keinen Ziffernblock</summary>
-      <p>Kein Problem. Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Ausschnitt“</b> macht sofort einen Screenshot. Oder du legst dir eine eigene Taste fest: Rechtsklick auf das Knips-Symbol → <b>„Einstellungen …“</b> → in das Feld klicken und die gewünschte Kombination drücken. Ein Stream Deck braucht ohnehin keinen Ziffernblock.</p></details>
-    <details><summary>Die Stream-Deck-Taste tut nichts</summary>
-      <p>Knips muss laufen (Symbol bei der Uhr). Die fertige Taste braucht Stream Deck ab Version 6.8. Hast du in Knips die Taste geändert, trag die neue Kombination auch im Stream Deck ein: Taste anklicken → ins Feld „Hotkey“ klicken → Kombination drücken.</p></details>
-    <details><summary>Wo finde ich meine Screenshots?</summary>
-      <p>In der Knips-Zentrale: <span class="taste">Strg</span> + <span class="taste">Num 0</span>, Klick auf das Knips-Symbol bei der Uhr oder auf das angeheftete Symbol in der Taskleiste. Als Dateien liegen sie im Ordner <b>Bilder → Screenshot-Knopf</b>, ein Ordner pro Tag.</p></details>
-    <details><summary>Wie mache ich Kundendaten unscharf?</summary>
-      <p>Mit <span class="taste">Strg</span> + <span class="taste">Num 2</span> knipsen, dann im Bearbeiten-Fenster die Taste <b>D</b> drücken. Was unkenntlich wird (Namen, Adresse, IBAN …), legst du unter „Einstellungen …“ fest. Bitte vor dem Einfügen kurz drüberschauen.</p></details>
-    <details><summary>Muss ich Updates selbst holen?</summary>
-      <p>Nein. Knips schaut einmal am Tag nach und fragt dich, wenn es etwas Neues gibt. Ein Klick, fertig.</p></details>
-    <details><summary>Brauche ich Administrator-Rechte?</summary>
-      <p>Nein, Knips installiert sich nur für dich. Manche Firmen sperren neue Programme trotzdem, dann hilft deine IT.</p></details>
-    <details><summary>Mein Virenschutz meldet sich</summary>
-      <p>Das passiert bei neuen Programmen manchmal, weil sie noch unbekannt sind. Ich prüfe jede Knips-Fassung vor dem Ausliefern mit Microsoft Defender. Bei Fragen schreib mir einfach.</p></details>
-    <details><summary>Wie entferne ich Knips wieder?</summary>
-      <p>Windows-Einstellungen → <b>Apps</b> → <b>Installierte Apps</b> → Knips → <b>Deinstallieren</b>. Deine Screenshots im Ordner „Bilder“ bleiben erhalten.</p></details>
-    <details><summary>Ich will Knips auf einem zweiten Rechner</summary>
-      <p>Speicher dir diese Seite als Lesezeichen und lade Knips dort einfach noch einmal herunter.</p></details>
-  </div>
-  <p class="nochfragen">Noch eine Frage? Schreib an <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a></p>
+  <p class="zweig"><a href="hilfe.html">Etwas hakt? Hier ist die Hilfe</a> · <a href="streamdeck.html">Du hast ein Stream Deck?</a></p>
 
   <footer>
-    Fragen? <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a> · <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+    <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
+    Die Abbuchung erfolgt durch Digistore24.com.
   </footer>
-  <p class="nochfragen">Die Abbuchung erfolgt durch Digistore24.com.</p>
   <script>
   // Digistore hängt Bestellnummer (b) und Lizenzschlüssel (k) an die Adresse
   (function () {
