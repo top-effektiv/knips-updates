@@ -12,7 +12,7 @@
 <main>
   <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
 
-  <h1>Danke, Knips gehört dir.</h1>
+  <h1 data-mit-name="Danke, {n}! Knips gehört dir.">Danke, Knips gehört dir.</h1>
   <p class="unter">Vier Schritte, dann läuft es.</p>
 
   <div class="karte">
@@ -50,8 +50,16 @@
     </video>
   </div>
 
+  <div class="gruss">
+    <img src="bilder/norbert-kloiber.jpg" width="84" height="84" alt="Norbert Kloiber">
+    <div>
+      <p class="gruss-text" data-mit-name="Das war es, {n}! Ich wünsche dir viel Freude bei der Arbeit mit Knips.">Das war es! Ich wünsche dir viel Freude bei der Arbeit mit Knips.</p>
+      <p class="gruss-name">Herzliche Grüße<br>Norbert Kloiber</p>
+    </div>
+  </div>
+
   <div class="karte zugabe">
-    <h2>Und falls du ein Stream Deck hast …</h2>
+    <h2 data-mit-name="Und falls du ein Stream Deck hast, {n} …">Und falls du ein Stream Deck hast …</h2>
     <p>Das Wichtigste ist geschafft, Knips läuft. Das hier ist die Zugabe: Mit einem Stream Deck machst du Screenshots im wahrsten Sinn des Wortes mit einem Klick: Taste drücken, Bereich ziehen, und das Bild liegt schon im Zwischenspeicher. Dann nur noch mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen, wo du es brauchst. Du musst dir kein Kürzel merken und brauchst nicht einmal einen Ziffernblock.</p>
     <figure class="deck">
       <img src="bilder/stream-deck-knips.png" width="703" height="356" alt="Stream-Deck-Programm mit 32 Tasten, auf einer davon liegt die rote Knips-Taste">
@@ -69,8 +77,6 @@
     <p class="klein">* Partnerlink zu Amazon (Werbung). Kaufst du darüber, erhalte ich eine kleine Provision, für dich ändert sich am Preis nichts.</p>
   </div>
 
-  <p class="schluss">Das war es. Viel Freude mit Knips!<span>Norbert</span></p>
-
   <p class="zweig"><a href="hilfe.html">Etwas hakt? Hier ist die Hilfe</a></p>
 
   <footer>
@@ -78,6 +84,17 @@
     Die Abbuchung erfolgt durch Digistore24.com.
   </footer>
   <script>
+  // Vorname (n) kommt hinter dem # und bleibt damit im Browser. Fehlt er, bleiben die neutralen Texte
+  (function () {
+    var m = /[#&]n=([^&]*)/.exec(location.hash), n = "";
+    try { n = m ? decodeURIComponent(m[1].replace(/\+/g, " ")).trim() : ""; } catch (e) {}
+    if (!n || n.charAt(0) === "[" || n.length > 30) return;
+    if (n === n.toLowerCase() || n === n.toUpperCase()) n = n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
+    document.querySelectorAll("[data-mit-name]").forEach(function (el) {
+      el.textContent = el.dataset.mitName.split("{n}").join(n);
+    });
+  })();
+
   // Digistore hängt Bestellnummer (b) und Lizenzschlüssel (k) an die Adresse
   (function () {
     var p = new URLSearchParams(location.search), b = p.get("b"), k = p.get("k");
