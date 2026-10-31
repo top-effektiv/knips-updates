@@ -6,7 +6,7 @@
 <title>Knips freigeschaltet</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="bilder/logo.png">
-<link rel="stylesheet" href="kauf.css">
+<link rel="stylesheet" href="kauf.css?v=2">
 </head>
 <body>
 <main>
@@ -86,10 +86,11 @@
     Die Abbuchung erfolgt durch Digistore24.com.
   </footer>
   <script>
-  // Vorname (n) kommt hinter dem # und bleibt damit im Browser. Fehlt er, bleiben die neutralen Texte
+  // Vorname (n) kommt von Digistore in der Adresse. Fehlt er, bleiben die neutralen Texte
   (function () {
-    var m = /[#&]n=([^&]*)/.exec(location.hash), n = "";
-    try { n = m ? decodeURIComponent(m[1].replace(/\+/g, " ")).trim() : ""; } catch (e) {}
+    var m = /[#&]n=([^&]*)/.exec(location.hash), n = new URLSearchParams(location.search).get("n") || "";
+    try { if (!n && m) n = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) {}
+    n = n.trim();
     if (!n || n.charAt(0) === "[" || n.length > 30) return;
     if (n === n.toLowerCase() || n === n.toUpperCase()) n = n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
     document.querySelectorAll("[data-mit-name]").forEach(function (el) {
