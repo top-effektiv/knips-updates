@@ -1,4 +1,9 @@
 {
+ "1.1.20": [
+  "Datenschutz erkennt jetzt auch Tabellen: Stehen oben „Name“, „Vorname“ oder „Geburtsdatum“,\nwird alles darunter in dieser Spalte unkenntlich, z. B. die Personen in einer Kunden-Akte.",
+  "Auch der Ortsteil wird jetzt unkenntlich, wie schon Straße, PLZ und Ort.",
+  "Neu in ⚙ Einstellungen → Speicherort: Du bestimmst selbst, in welchen Ordner deine Screenshots kommen."
+ ],
  "1.1.19": [
   "Knips hat einen neuen Look: ruhiger, moderner und aus einem Guss.\nAlle Knöpfe und Tasten bleiben, wo du sie kennst.",
   "Auch alle Fenster und Menüs sehen jetzt gleich aus, sogar das Menü bei der rechten Maustaste."
