@@ -6,7 +6,7 @@
 <title>Knips freigeschaltet</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="bilder/logo.png">
-<link rel="stylesheet" href="kauf.css?v=3">
+<link rel="stylesheet" href="kauf.css?v=4">
 </head>
 <body>
 <main>
@@ -17,17 +17,17 @@
 
   <div class="karte">
     <h2><span class="nr">1</span>Knips herunterladen</h2>
-    <p>Wähle deinen Rechner und öffne danach die Datei.</p>
+    <p id="dl-text">Wähle deinen Rechner und öffne danach die Datei.</p>
     <div class="dl" id="dl">
       <a class="knopf" id="dl-win" href="Knips-Setup.exe" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Für Windows herunterladen</a>
       <a class="knopf zweit" id="dl-mac" href="Knips-Mac.dmg" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Für Mac herunterladen</a>
     </div>
     <p class="klein" style="margin-top:12px">Windows 10 und 11 · macOS ab 14 (Sonoma), Mac mit Apple-Chip (M1 oder neuer)</p>
-    <p class="klein" id="mac-hinweis">Am Mac: Datei öffnen und Knips in den Ordner „Programme“ ziehen. Beim ersten Mal dort Rechtsklick auf Knips → „Öffnen“, dann fragt der Mac nach der Bildschirm-Erlaubnis: einmal erlauben. Die Schritte 2 und 4 brauchst du am Mac nicht. Dein erster Screenshot: <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span>, einfügen mit <span class="taste">⌘</span> + <span class="taste">V</span>.</p>
+    <p class="klein" id="mac-hinweis">Holst du die Mac-Fassung? Dann gelten die Mac-Schritte: Öffne diese Seite am besten direkt am Mac, dann siehst du sie.</p>
     <p class="klein" style="margin-top:14px">Gerade am Handy? Öffne deine Bestellmail von Digistore24 am Computer und klick dort auf den ersten Zugangs-Link. Dann bist du wieder hier.</p>
   </div>
 
-  <div class="karte">
+  <div class="karte" id="k-win-warnung">
     <h2><span class="nr">2</span>Windows warnt dich, das ist normal</h2>
     <p>Windows kennt neue Programme noch nicht und zeigt deshalb meist diese blaue Meldung. So geht es weiter:</p>
     <video class="film" autoplay muted loop playsinline preload="metadata" poster="bilder/windows-warnung.jpg" width="1120" height="640" aria-label="Klick auf Weitere Informationen, danach auf Trotzdem ausführen">
@@ -36,7 +36,18 @@
     <p class="klein">Vereinfacht nachgezeichnet. Keine Meldung bei dir? Dann geht es direkt weiter.</p>
   </div>
 
-  <div class="karte">
+  <div class="karte" id="k-mac-oeffnen" hidden>
+    <h2><span class="nr">2</span>Knips zum ersten Mal öffnen</h2>
+    <p>Knips hat noch kein Apple-Siegel, darum braucht das erste Öffnen einen kleinen Umweg. Das kommt nur einmal.</p>
+    <ol>
+      <li>Öffne den Ordner <b>„Programme“</b>, klick mit der rechten Maustaste auf <b>Knips</b> → <b>„Öffnen“</b> und dann noch einmal auf <b>„Öffnen“</b>.</li>
+      <li>Der Mac fragt, ob Knips den Bildschirm aufnehmen darf. Klick auf <b>„Einstellungen öffnen“</b> und schalte Knips ein.</li>
+      <li>Knips neu starten. Knips zeigt dir dafür selbst einen Knopf.</li>
+    </ol>
+    <p class="klein">Sagt der Mac „Knips kann nicht geöffnet werden“: Systemeinstellungen → <b>Datenschutz &amp; Sicherheit</b>, ganz unten bei Knips auf <b>„Trotzdem öffnen“</b>.</p>
+  </div>
+
+  <div class="karte" id="k-freischalten">
     <h2><span class="nr">3</span>Knips freischalten</h2>
     <p>Knips fragt beim ersten Start nach diesen zwei Angaben. Einfach kopieren und einfügen.</p>
     <div id="freischalten" hidden>
@@ -44,10 +55,10 @@
       <div class="wert"><span>Lizenzschlüssel</span><code id="wert-k"></code><button type="button" data-feld="wert-k">Kopieren</button></div>
     </div>
     <p class="klein" style="margin-top:12px">Beides steht auch in deiner Bestellmail von Digistore24.</p>
-    <p>Dein erster Screenshot: <span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Laptop ohne Ziffernblock? Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Ausschnitt“</b>.</p>
+    <p id="erster-shot">Dein erster Screenshot: <span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen. Laptop ohne Ziffernblock? Rechtsklick auf das Knips-Symbol bei der Uhr → <b>„Ausschnitt“</b>.</p>
   </div>
 
-  <div class="karte">
+  <div class="karte" id="k-win-taskleiste">
     <h2><span class="nr">4</span>Knips griffbereit machen</h2>
     <p>Windows lässt Programme das nicht selbst machen, das sind zwei Klicks von dir:</p>
     <video class="film" autoplay muted loop playsinline preload="metadata" poster="bilder/taskleiste.jpg" width="1120" height="640" aria-label="Knips im Startmenü suchen, Rechtsklick, An Taskleiste anheften">
@@ -98,12 +109,13 @@
       var win = document.getElementById('dl-win'), mac = document.getElementById('dl-mac');
       win.className = 'knopf zweit'; mac.className = 'knopf';
       mac.parentNode.insertBefore(mac, win);
-      var karten = document.querySelectorAll('main > .karte');
-      karten[1].hidden = true; karten[3].hidden = true;
-      karten[2].querySelector('.nr').textContent = '2';
-      document.getElementById('schritte').textContent = 'Zwei Schritte, dann läuft es.';
-      var h = document.getElementById('mac-hinweis');
-      h.innerHTML = h.innerHTML.replace(' Die Schritte 2 und 4 brauchst du am Mac nicht.', '');
+      var $ = function (id) { return document.getElementById(id); };
+      $('k-win-warnung').hidden = true; $('k-win-taskleiste').hidden = true; $('mac-hinweis').hidden = true;
+      $('k-mac-oeffnen').hidden = false;
+      var z = document.querySelector('.zugabe'); if (z) z.hidden = true;   // die fertige Stream-Deck-Taste hat das Windows-Kürzel
+      $('dl-text').innerHTML = 'Danach die Datei öffnen und <b>Knips in den Ordner „Programme“ ziehen</b>.';
+      $('erster-shot').innerHTML = 'Dein erster Screenshot: <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span>, Bereich ziehen, mit <span class="taste">⌘</span> + <span class="taste">V</span> einfügen. Alles andere findest du beim Knips-Symbol oben in der Menüleiste.';
+      $('schritte').textContent = 'Drei Schritte, dann läuft es.';
     })();
   </script>
   <script>
