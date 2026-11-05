@@ -60,3 +60,6 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 28px 0 8px; le
 .fragen details[open] summary::before { transform: rotate(90deg); }
 .fragen details p { margin: 0 0 14px 18px; color: var(--leise); font-size: 15px; }
 footer { border-top: 1px solid var(--linie); margin-top: 28px; padding-top: 18px; color: var(--leise); font-size: 14px; text-align: center; }
+
+.dl { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.dl .knopf svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
