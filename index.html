@@ -91,7 +91,10 @@
   .buehne .leiste { height: 34px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid var(--linie); }
   .buehne .leiste i { width: 11px; height: 11px; border-radius: 50%; background: #DDD; display: block; }
   .buehne img, .buehne video { display: block; width: 100%; height: auto; }
-  .ueberall { margin: 60px auto 0; text-align: center; }
+  /* Logo-Zeile als helles Band über die ganze Breite: trennt den Kopfbereich ruhig vom Rest.
+     Das Band ist ein border-image, das seitlich hinausragt; das erzeugt kein Seitwärts-Scrollen */
+  .ueberall { margin: 44px auto 0; padding: 26px 0 28px; text-align: center;
+              border-image: linear-gradient(var(--linie) 0 1px, var(--karte) 1px calc(100% - 1px), var(--linie) calc(100% - 1px)) fill 0 / 0 / 0 100vw; }
   .ueberall-titel { font-size: 15px; font-weight: 600; color: var(--leise); }
   .marken { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 26px; margin-top: 16px; }
   .marken div { width: 66px; }
