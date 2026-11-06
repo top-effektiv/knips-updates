@@ -48,7 +48,7 @@
   @media (prefers-reduced-motion: reduce) { .strich path { animation: none; stroke-dashoffset: 0; } }
   .aktion { text-align: center; }
   .aktion .knopf { margin-top: 22px; }
-  .film.beweis { box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 18px 46px rgba(0,0,0,.16); margin-top: 30px; }
+  .film.beweis { box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 18px 46px rgba(0,0,0,.16); margin-top: 44px; }
 
   /* Video als Hauptdarsteller */
   .film { position: relative; margin: 26px auto 0; max-width: 980px; border-radius: 16px; overflow: hidden;
@@ -91,7 +91,7 @@
   .buehne .leiste { height: 34px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid var(--linie); }
   .buehne .leiste i { width: 11px; height: 11px; border-radius: 50%; background: #DDD; display: block; }
   .buehne img, .buehne video { display: block; width: 100%; height: auto; }
-  .ueberall { margin: 30px auto 0; text-align: center; }
+  .ueberall { margin: 60px auto 0; text-align: center; }
   .ueberall-titel { font-size: 15px; font-weight: 600; color: var(--leise); }
   .marken { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 26px; margin-top: 16px; }
   .marken div { width: 66px; }
@@ -126,10 +126,11 @@
   .neu-datum { font-size: 13px; font-weight: 700; color: var(--rot); white-space: nowrap; }
   .neu-eintrag:not(:first-child) .neu-datum { color: var(--leise); }
   @media (max-width: 560px) { .neu-eintrag { grid-template-columns: 1fr; gap: 2px; } }
-  .gleich-kaufen { color: var(--leise); }
+  .gleich-kaufen { color: var(--leise); font-weight: 400; }
+  .systeme .punkt { color: var(--leise); font-weight: 400; margin: 0 -8px; }
+  #preise { scroll-margin-top: 96px; }
+  .aktion .klein { margin-top: 14px; }
   .gleich-kaufen:hover { color: var(--text); }
-  .test-reihe { text-align: center; margin: 0 0 26px; }
-  .test-reihe .knopf { margin-top: 0; }
   .preise { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto 22px; text-align: left; }
   .preis { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
   .preis.haupt { border-color: var(--rot); }
@@ -167,9 +168,8 @@
 
   <div class="aktion">
     <a class="knopf" href="https://www.digistore24.com/product/761216">14 Tage gratis testen</a>
-    <div class="klein"><a class="gleich-kaufen" href="#holen">oder gleich kaufen →</a></div>
-    <div class="systeme"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Windows</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>macOS</span></div>
     <div class="klein">Ohne Zahlungsdaten · danach 19 € im Jahr oder 47 € einmalig</div>
+    <div class="systeme"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Windows</span><span class="punkt">·</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>macOS</span><span class="punkt">·</span><a class="gleich-kaufen" href="#preise">oder gleich kaufen ↓</a></div>
   </div>
   <div class="ueberall">
     <div class="ueberall-titel">Einfügen, wo du arbeitest</div>
@@ -321,23 +321,23 @@
 
   <section id="holen" class="abschluss">
     <h2>Knips holen</h2>
-    <p class="zwischen">Erst 14 Tage gratis testen, nur mit Name und E-Mail. Oder gleich kaufen, such dir aus, was besser zu dir passt.</p>
-    <div class="test-reihe"><a class="knopf" href="https://www.digistore24.com/product/761216">14 Tage gratis testen</a></div>
-    <div class="preise">
+    <p class="zwischen">Such dir aus, was besser zu dir passt. Dein Wunsch landet direkt bei mir.</p>
+    <div class="preise" id="preise">
       <div class="preis haupt">
         <div class="schild">Beliebteste Wahl</div>
         <h3>Im Jahr</h3>
         <div class="summe">19&nbsp;€<span> / Jahr</span></div>
         <p>Alle Updates inklusive. Jährlich kündbar.</p>
-        <a class="knopf zweit" href="https://www.digistore24.com/product/757565">Gleich kaufen: 19 € im Jahr</a>
+        <a class="knopf" href="https://www.digistore24.com/product/757565">19 € im Jahr kaufen</a>
       </div>
       <div class="preis">
         <h3>Einmalig</h3>
         <div class="summe">47&nbsp;€<span> einmal</span></div>
         <p>Einmal zahlen, dauerhaft nutzen. Alle Updates inklusive.</p>
-        <a class="knopf zweit" href="https://www.digistore24.com/product/757565?plan=1546901">Gleich kaufen: 47 € einmalig</a>
+        <a class="knopf zweit" href="https://www.digistore24.com/product/757565?plan=1546901">47 € einmalig kaufen</a>
       </div>
     </div>
+    <p class="zwischen testen">Lieber erst ausprobieren? <a href="https://www.digistore24.com/product/761216">14 Tage gratis&nbsp;testen&nbsp;→</a></p>
     <div class="systeme"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Windows</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>macOS</span></div>
     <div class="klein">Windows 10 und 11 · macOS ab 14 (Sonoma), Mac mit Apple-Chip (M1 oder neuer)</div>
     <div class="klein">Kauf und Zahlung laufen über Digistore24 · 14 Tage Widerrufsrecht</div>
