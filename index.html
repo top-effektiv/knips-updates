@@ -126,6 +126,10 @@
   .neu-datum { font-size: 13px; font-weight: 700; color: var(--rot); white-space: nowrap; }
   .neu-eintrag:not(:first-child) .neu-datum { color: var(--leise); }
   @media (max-width: 560px) { .neu-eintrag { grid-template-columns: 1fr; gap: 2px; } }
+  .gleich-kaufen { color: var(--leise); }
+  .gleich-kaufen:hover { color: var(--text); }
+  .test-reihe { text-align: center; margin: 0 0 26px; }
+  .test-reihe .knopf { margin-top: 0; }
   .preise { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto 22px; text-align: left; }
   .preis { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
   .preis.haupt { border-color: var(--rot); }
@@ -162,9 +166,10 @@
 
 
   <div class="aktion">
-    <a class="knopf" href="#holen">Knips holen</a>
+    <a class="knopf" href="https://www.digistore24.com/product/761216">14 Tage gratis testen</a>
+    <div class="klein"><a class="gleich-kaufen" href="#holen">oder gleich kaufen →</a></div>
     <div class="systeme"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Windows</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>macOS</span></div>
-    <div class="klein">19 € im Jahr oder 47 € einmalig · Einrichtung in einer Minute</div>
+    <div class="klein">Ohne Zahlungsdaten · danach 19 € im Jahr oder 47 € einmalig</div>
   </div>
   <div class="ueberall">
     <div class="ueberall-titel">Einfügen, wo du arbeitest</div>
@@ -226,7 +231,7 @@
     <h2>In einer Minute eingerichtet</h2>
     <p class="zwischen">Kein Konto, kein Passwort. Bestellnummer und Lizenzschlüssel einmal einfügen, das war es.</p>
     <div class="raster">
-      <div class="karte schritt"><b>1</b><h3>Kaufen und herunterladen</h3><p>Unten deinen Preis wählen. Auf der Danke-Seite lädst du Knips herunter und öffnest die Datei.</p></div>
+      <div class="karte schritt"><b>1</b><h3>Gratis testen oder kaufen</h3><p>Auf der Danke-Seite lädst du Knips herunter und öffnest die Datei.</p></div>
       <div class="karte schritt"><b>2</b><h3>Windows-Hinweis wegklicken</h3><p>Zeigt Windows „Der Computer wurde geschützt“: „Weitere Informationen“ → „Trotzdem ausführen“. Das ist bei neuen Programmen normal. Am Mac: Systemeinstellungen → „Datenschutz &amp; Sicherheit“ → „Trotzdem öffnen“.</p></div>
       <div class="karte schritt"><b>3</b><h3>Freischalten und loslegen</h3><p>Bestellnummer und Schlüssel von der Danke-Seite einfügen. Dann <span class="taste">Strg</span> + <span class="taste">Num 1</span>, Bereich ziehen, <span class="taste">Strg</span> + <span class="taste">V</span>. Am Mac: <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span> und <span class="taste">⌘</span> + <span class="taste">V</span>.</p></div>
     </div>
@@ -256,12 +261,12 @@
         <div class="tastenbild"><img src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste: rotes Quadrat mit weißen Ecken und gelbem Punkt">
           <div><h3>Fertige Taste</h3><p class="leise" style="margin:0">Bild und Tastenkürzel sind schon drin.</p></div></div>
         <ol>
-          <li>Knips holen, dann die fertige Knips-Taste auf der Danke-Seite herunterladen.</li>
+          <li>Knips testen oder kaufen, dann die fertige Knips-Taste auf der Danke-Seite herunterladen.</li>
           <li>Stream-Deck-Programm öffnen und die Datei auf eine freie Taste ziehen. Oder: Rechtsklick auf die freie Taste → „Aktion importieren …“.</li>
           <li>Taste drücken, Bereich ziehen, mit <span class="taste">Strg</span> + <span class="taste">V</span> einfügen.</li>
         </ol>
         <div class="knopfreihe">
-          <a class="knopf klein-knopf" href="#holen">Mit Knips holen</a>
+          <a class="knopf klein-knopf" href="https://www.digistore24.com/product/761216">Gratis testen</a>
         </div>
         <p class="klein" style="text-align:left">Braucht Stream Deck ab Version 6.8.</p>
       </div>
@@ -275,9 +280,7 @@
         </ol>
         <p class="klein" style="text-align:left">Bleibt das Feld leer? Dann hat Knips das Kürzel geschnappt. Knips kurz beenden (Knips-Symbol bei der Uhr → Beenden), Kürzel eintragen, Knips über das Startmenü wieder starten.<br>
         Tastenbild: Rechtsklick auf das Bild der Taste → „Bilddatei auswählen“.</p>
-        <div class="knopfreihe">
-          <a class="knopf klein-knopf zweit" href="#holen">Tastenbild: nach dem Kauf</a>
-        </div>
+        <p class="klein" style="text-align:left">Das fertige Tastenbild liegt auf deiner Danke-Seite, egal ob du testest oder kaufst.</p>
       </div>
     </div>
     <p class="zwischen" style="margin-top:22px">Noch kein Stream Deck? Ich arbeite mit dem Stream Deck XL. <a href="https://top-effektiv-kloiber.com/ausstattung/#elgato-stream-deck-xl">Zu meiner Ausstattung →</a></p>
@@ -287,6 +290,7 @@
     <h2>Was ist neu</h2>
     <p class="zwischen">Knips wird laufend besser. Updates kommen von selbst, ein Klick genügt.</p>
     <div class="neuigkeiten">
+      <div class="neu-eintrag"><span class="neu-datum">06.11.2026 · 1.1.22</span><p>Neu: PDF schwärzen. PDF auf das Knips-Symbol ziehen, Knips legt schwarze Balken über Namen, Adresse, IBAN und Co., du schaust kurz drüber und sicherst ein neues PDF, in dem der Text wirklich weg ist. Dazu: Knips 14 Tage gratis testen, nur mit Name und E-Mail. Und das Knips-Partnerprogramm: Knips mit einem Klick weitergeben (WhatsApp, E-Mail, LinkedIn, Xing und mehr, auch per QR-Code) und als Partner 10 % von jedem Kauf bekommen.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">03.11.2026 · 1.1.20</span><p>Datenschutz erkennt jetzt auch Tabellen: Stehen oben „Name“, „Vorname“ oder „Geburtsdatum“, wird alles darunter unkenntlich, z. B. die Personen in einer Kunden-Akte. Und neu in den Einstellungen: Du wählst selbst, in welchen Ordner deine Screenshots kommen.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">31.10.2026 · 1.1.19</span><p>Neuer Look: ruhiger, moderner und aus einem Guss. Alle Fenster und Menüs sehen jetzt gleich aus. Knöpfe und Tasten bleiben, wo du sie kennst.</p></div>
       <div class="neu-eintrag"><span class="neu-datum">28.10.2026 · 1.1.16</span><p>Neu oben in der Zentrale: „Tastenkürzel ?“. Alle Tasten auf einen Blick, schön übersichtlich, für den Screenshot und zum Bearbeiten. Geht auch mit der Taste ?.</p></div>
@@ -305,7 +309,8 @@
     <h2>Kurz gefragt</h2>
     <p class="zwischen">Die Antworten auf das, was die meisten wissen wollen.</p>
     <div class="raster">
-      <div class="karte"><h3>Was kostet Knips?</h3><p>19 € im Jahr oder einmalig 47 €, jeweils mit allen Updates. Wer Knips schon vor dem Verkaufsstart hatte, behält es kostenlos.</p></div>
+      <div class="karte"><h3>Was kostet Knips?</h3><p>Die ersten 14 Tage nichts, ohne Zahlungsdaten. Danach 19 € im Jahr oder einmalig 47 €, jeweils mit allen Updates. Wer Knips schon vor dem Verkaufsstart hatte, behält es kostenlos.</p></div>
+      <div class="karte"><h3>Was passiert nach 14 Tagen?</h3><p>Knips fragt dich, ob du kaufen willst. Es läuft nichts automatisch weiter und kostet nichts. Deine Bilder bleiben auf deinem Rechner.</p></div>
       <div class="karte"><h3>Schickt Knips meine Bilder irgendwohin?</h3><p>Nein. Deine Screenshots bleiben auf deinem Rechner. In die KI kommt nur, was du selbst mit Strg&nbsp;+&nbsp;V einfügst.</p></div>
       <div class="karte"><h3>Was passiert, wenn ich kündige?</h3><p>Knips läuft bis zum Ende deines bezahlten Jahres. Danach machst du keine neuen Screenshots mehr. Deine Bilder bleiben auf deinem Rechner und erreichbar.</p></div>
       <div class="karte"><h3>Geht das auf meinem Firmen-PC?</h3><p>Meistens ja: Knips braucht keine Administrator-Rechte. Sperrt deine Firma neue Programme, hilft deine IT.</p></div>
@@ -316,20 +321,21 @@
 
   <section id="holen" class="abschluss">
     <h2>Knips holen</h2>
-    <p class="zwischen">Such dir aus, was besser zu dir passt. Dein Wunsch landet direkt bei mir.</p>
+    <p class="zwischen">Erst 14 Tage gratis testen, nur mit Name und E-Mail. Oder gleich kaufen, such dir aus, was besser zu dir passt.</p>
+    <div class="test-reihe"><a class="knopf" href="https://www.digistore24.com/product/761216">14 Tage gratis testen</a></div>
     <div class="preise">
       <div class="preis haupt">
         <div class="schild">Beliebteste Wahl</div>
         <h3>Im Jahr</h3>
         <div class="summe">19&nbsp;€<span> / Jahr</span></div>
         <p>Alle Updates inklusive. Jährlich kündbar.</p>
-        <a class="knopf" href="https://www.digistore24.com/product/757565">Für 19 € im Jahr holen</a>
+        <a class="knopf zweit" href="https://www.digistore24.com/product/757565">Gleich kaufen: 19 € im Jahr</a>
       </div>
       <div class="preis">
         <h3>Einmalig</h3>
         <div class="summe">47&nbsp;€<span> einmal</span></div>
         <p>Einmal zahlen, dauerhaft nutzen. Alle Updates inklusive.</p>
-        <a class="knopf zweit" href="https://www.digistore24.com/product/757565?plan=1546901">Für 47 € einmalig holen</a>
+        <a class="knopf zweit" href="https://www.digistore24.com/product/757565?plan=1546901">Gleich kaufen: 47 € einmalig</a>
       </div>
     </div>
     <div class="systeme"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6l7.4-1v7H3zM11.4 4.5L21 3.2v8.4h-9.6zM3 12.4h7.4v7.1L3 18.4zM11.4 12.4H21v8.4l-9.6-1.3z"/></svg>Windows</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>macOS</span></div>
@@ -341,6 +347,15 @@
       var film = document.getElementById('film');
       film.controls = true; film.play(); this.remove();
     });
+    // Kommt jemand über einen Partner-Link (?aff=ID), bekommen die Kauf-Knöpfe die ID mit, damit Digistore24
+    // den Kauf dem Partner zuordnet. Ohne Cookie, ohne fremdes Skript: gespeichert wird nichts
+    (function () {
+      var aff = new URLSearchParams(location.search).get('aff') || '';
+      if (!/^[A-Za-z0-9_.-]{2,40}$/.test(aff)) return;
+      document.querySelectorAll('a[href*="digistore24.com/product/757565"], a[href*="digistore24.com/product/761216"]').forEach(function (a) {
+        a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + 'aff=' + encodeURIComponent(aff);
+      });
+    })();
   </script>
 </main>
 
@@ -348,7 +363,7 @@
   Knips – der 1-Klick-Screenshot · TOP effektiv · Fragen: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a><br>
   Knips hilft beim Datenschutz. Bitte vor dem Einfügen kurz drüberschauen, ob alles Persönliche unscharf ist.<br>
   Die genannten Marken gehören ihren Inhabern. Keine Verbindung zu Knips.<br>
-  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  <a href="partner.html">Partner werden</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
 </footer>
 
 </body>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knips-Partner werden</title>
+<meta name="description" content="Knips weiterempfehlen und 10 % von jedem Kauf bekommen. In zwei Minuten eingerichtet, abgerechnet über Digistore24.">
+<link rel="icon" href="bilder/logo.png">
+<link rel="stylesheet" href="kauf.css?v=2">
+<style>
+  .eingabe { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 12px; }
+  .eingabe input { flex: 1 1 220px; font: inherit; font-size: 16px; padding: 10px 14px; border: 1px solid var(--linie);
+                   border-radius: 10px; background: var(--karte); color: var(--text); }
+  .eingabe input:focus { outline: none; border-color: var(--rot); }
+  #mein-link { font-family: Consolas, monospace; font-size: 15px; overflow-wrap: anywhere; }
+  .link-zeile { display: none; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px 0 0;
+                border-top: 1px solid var(--linie); }
+  .link-zeile.da { display: grid; }
+  .link-zeile button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px;
+                       background: transparent; color: var(--text); cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+  <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
+
+  <h1>Knips empfehlen und mitverdienen</h1>
+  <p class="unter">Du empfiehlst Knips weiter und bekommst 10&nbsp;% von jedem Kauf über deinen Link.</p>
+
+  <div class="karte">
+    <h2><span class="nr">1</span>Partner werden</h2>
+    <p>Bei Digistore24 als Partner für Knips anmelden. Wer noch kein Konto hat, legt es dort kostenlos an. Du bist sofort freigeschaltet.</p>
+    <a class="knopf" href="https://www.digistore24.com/signup/757565/" target="_blank" rel="noopener">Bei Digistore24 anmelden</a>
+  </div>
+
+  <div class="karte">
+    <h2><span class="nr">2</span>Deinen Link holen</h2>
+    <p>Gib deine Digistore24-ID ein. Sie steht in Digistore24 oben rechts bei deinem Namen.</p>
+    <div class="eingabe"><input id="id" type="text" placeholder="Deine Digistore24-ID" autocomplete="off" spellcheck="false"></div>
+    <div class="link-zeile" id="link-zeile"><span id="mein-link"></span><button type="button" id="kopieren">Kopieren</button></div>
+    <p class="klein" style="margin-top:12px">Wer über diesen Link kauft, wird dir zugeordnet. Die ID wird nirgends gespeichert, der Link entsteht nur hier in deinem Browser.</p>
+  </div>
+
+  <div class="karte">
+    <h2><span class="nr">3</span>Weitergeben</h2>
+    <p>Schick den Link per WhatsApp, Mail oder in einem Beitrag. Am besten mit ein, zwei Sätzen, wofür du Knips selbst nutzt.</p>
+    <p><b>Du nutzt Knips selbst?</b> Dann geht es noch leichter: In Knips oben rechts auf „Empfehlen · 10 %“ und dann auf „Werde Partner“ klicken und die ID eintragen. Ab dann steckt dein Link in jedem Text, den du über Knips verschickst, auch im QR-Code.</p>
+  </div>
+
+  <div class="karte">
+    <h2><span class="nr">€</span>Abrechnung</h2>
+    <p>Die Provision rechnet Digistore24 ab und zahlt sie direkt an dich aus. Deine Verkäufe siehst du jederzeit in deinem Digistore24-Konto.</p>
+  </div>
+
+  <p class="zweig">Fragen? Schreib mir: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a></p>
+
+  <footer>
+    <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+  <script>
+  // Aus der Digistore24-ID den eigenen Link bauen. Nichts wird gespeichert oder verschickt
+  (function () {
+    var feld = document.getElementById("id"), zeile = document.getElementById("link-zeile"),
+        link = document.getElementById("mein-link"), knopf = document.getElementById("kopieren");
+    feld.addEventListener("input", function () {
+      var id = feld.value.trim();
+      var gut = /^[A-Za-z0-9_.-]{2,40}$/.test(id);
+      zeile.classList.toggle("da", gut);
+      link.textContent = gut ? "https://123knips.com/?aff=" + id : "";
+    });
+    knopf.addEventListener("click", function () {
+      navigator.clipboard.writeText(link.textContent).then(function () {
+        knopf.textContent = "Kopiert ✓";
+        setTimeout(function () { knopf.textContent = "Kopieren"; }, 1800);
+      });
+    });
+  })();
+  </script>
+</main>
+</body>
+</html>

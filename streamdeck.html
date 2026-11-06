@@ -14,23 +14,66 @@
   <h1>Knips aufs Stream Deck</h1>
   <p class="unter">Nur wenn du ein Stream Deck hast.</p>
 
-  <div class="karte">
+  <div class="karte" id="k-win">
     <p>Datei auf eine freie Taste im Stream-Deck-Programm ziehen. Bild und Tastenkürzel sind schon drin (ab Stream Deck 6.8).</p>
     <div class="reihe">
       <img class="tastenbild" src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste">
       <a class="knopf" href="streamdeck/Knips-Taste.streamDeckAction" download>⬇&nbsp; Fertige Knips-Taste</a>
       <a class="knopf zweit" href="streamdeck/Knips-Taste-288.png" download>Nur das Tastenbild</a>
     </div>
+    <p class="klein" style="margin-top:14px">Du hast einen Mac? <a href="#mac" id="zum-mac">Hier ist die Mac-Taste.</a></p>
   </div>
 
-  <div class="fragen">
+  <div class="karte" id="k-mac" hidden>
+    <h2>Die Knips-Taste für den Mac</h2>
+    <p>Bild und Tastenkürzel <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span> sind schon drin. So kommt sie auf dein Stream Deck:</p>
+    <ol>
+      <li>Die Mac-Taste hier herunterladen.</li>
+      <li>Das Stream-Deck-Programm öffnen.</li>
+      <li>Die Datei aus „Downloads“ auf eine freie Taste ziehen.</li>
+    </ol>
+    <div class="reihe">
+      <img class="tastenbild" src="streamdeck/Knips-Taste-288.png" alt="Knips-Taste">
+      <a class="knopf" href="streamdeck/Knips-Taste-Mac.streamDeckAction" download>⬇&nbsp; Knips-Taste für Mac</a>
+      <a class="knopf zweit" href="streamdeck/Knips-Taste-288.png" download>Nur das Tastenbild</a>
+    </div>
+    <p class="klein" style="margin-top:14px">Taste drücken, Bereich ziehen, mit <span class="taste">⌘</span> + <span class="taste">V</span> einfügen. Das geht ab Stream Deck 6.8. Du bist an einem Windows-PC? <a href="#windows" id="zum-win">Hier ist die Windows-Taste.</a></p>
+  </div>
+
+  <div class="fragen" id="f-win">
     <details><summary>Die Stream-Deck-Taste tut nichts</summary>
       <p>Knips muss laufen (Symbol bei der Uhr). Die fertige Taste braucht Stream Deck ab Version 6.8. Hast du in Knips die Taste geändert, trag die neue Kombination auch im Stream Deck ein: Taste anklicken → ins Feld „Hotkey“ klicken → Kombination drücken.</p></details>
+  </div>
+
+  <div class="fragen" id="f-mac" hidden>
+    <details><summary>Die Stream-Deck-Taste tut nichts</summary>
+      <p>Schau zuerst, ob Knips läuft: Das Knips-Symbol muss oben in der Menüleiste sein. Dann probier <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span> einmal auf der Tastatur. Geht es dort, darf das Stream-Deck-Programm noch keine Tasten drücken: <b>Systemeinstellungen</b> → <b>Datenschutz &amp; Sicherheit</b> → <b>Bedienungshilfen</b>, dort <b>Stream Deck</b> einschalten und das Stream-Deck-Programm neu starten.</p></details>
+    <details><summary>Ich hab in Knips eine andere Taste eingestellt</summary>
+      <p>Dann trag die neue Kombination auch im Stream Deck ein: Knips-Taste im Stream-Deck-Programm anklicken → ins Feld „Hotkey“ klicken → Kombination drücken.</p></details>
+    <details><summary>Ich hab die Windows-Taste erwischt</summary>
+      <p>Die drückt am Mac die falsche Kombination. Lösch sie im Stream-Deck-Programm und zieh die Mac-Taste drauf.</p></details>
   </div>
 
   <footer>
     <a href="hilfe.html">Hilfe</a> · <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </footer>
 </main>
+<script>
+  // Mac-Besucher sehen die Mac-Taste (wie auf der Danke-Seite); #mac / #windows schaltet von Hand um
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    function zeigen(mac) {
+      $('k-win').hidden = mac; $('f-win').hidden = mac;
+      $('k-mac').hidden = !mac; $('f-mac').hidden = !mac;
+    }
+    var p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    var istMac = /mac/i.test(p) && !(navigator.maxTouchPoints > 1);
+    if (location.hash === '#mac') istMac = true;
+    if (location.hash === '#windows') istMac = false;
+    zeigen(istMac);
+    $('zum-mac').onclick = function () { zeigen(true); };
+    $('zum-win').onclick = function () { zeigen(false); };
+  })();
+</script>
 </body>
 </html>

@@ -112,11 +112,36 @@
       var $ = function (id) { return document.getElementById(id); };
       $('k-win-warnung').hidden = true; $('k-win-taskleiste').hidden = true; $('mac-hinweis').hidden = true;
       $('k-mac-oeffnen').hidden = false;
-      var z = document.querySelector('.zugabe'); if (z) z.hidden = true;   // die fertige Stream-Deck-Taste hat das Windows-Kürzel
+      // Stream-Deck-Zugabe: Mac-Taste (⌃⌥1) statt der Windows-Taste, Einfügen mit ⌘V
+      var z = document.querySelector('.zugabe');
+      if (z) {
+        z.querySelector('a.knopf').href = 'streamdeck/Knips-Taste-Mac.streamDeckAction';
+        var t = z.querySelectorAll('p')[0].querySelectorAll('.taste'); if (t.length > 0) t[0].textContent = '⌘';
+        var k = z.querySelector('p.klein');
+        if (k) k.innerHTML = 'Das geht ab Stream Deck 6.8. Die Taste tut nichts? <a href="streamdeck.html#mac">Hier ist die Hilfe.</a>';
+      }
       $('dl-text').innerHTML = 'Danach die Datei öffnen und <b>Knips in den Ordner „Programme“ ziehen</b>.';
       $('erster-shot').innerHTML = 'Dein erster Screenshot: <span class="taste">⌃</span> <span class="taste">⌥</span> <span class="taste">1</span>, Bereich ziehen, mit <span class="taste">⌘</span> + <span class="taste">V</span> einfügen. Alles andere findest du beim Knips-Symbol oben in der Menüleiste.';
       $('schritte').textContent = 'Drei Schritte, dann läuft es.';
     })();
+  </script>
+  <script>
+  // Testzeit (t=1, Produkt „Knips – 14 Tage gratis testen“): andere Überschrift, Hinweis auf die 14 Tage
+  (function () {
+    if (new URLSearchParams(location.search).get("t") !== "1") return;
+    var h = document.querySelector("h1");
+    h.dataset.mitName = "Schön, {n}! Du testest Knips jetzt 14 Tage gratis.";
+    h.textContent = "Schön! Du testest Knips jetzt 14 Tage gratis.";
+    var hinweis = document.createElement("p");
+    hinweis.className = "klein";
+    hinweis.style.marginTop = "12px";
+    hinweis.textContent = "In den 14 Tagen kannst du alles nutzen. Danach fragt Knips nach einer Bestellung. " +
+      "Gefällt dir Knips, holst du es auf 123knips.com und trägst die neue Bestellung ein. Deine Bilder bleiben so oder so erhalten.";
+    document.querySelector("#k-freischalten p").after(hinweis);
+    var g = document.querySelector(".gruss-text");
+    if (g) g.dataset.mitName = "Das war es, {n}! Viel Freude beim Ausprobieren.";
+    if (g) g.textContent = "Das war es! Viel Freude beim Ausprobieren.";
+  })();
   </script>
   <script>
   // Vorname (n) kommt von Digistore in der Adresse. Fehlt er, bleiben die neutralen Texte
