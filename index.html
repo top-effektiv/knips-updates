@@ -144,7 +144,36 @@
   .preis p { margin: 0 0 18px; color: var(--leise); font-size: 15px; flex: 1; }
   .preis .knopf { margin-top: 0; justify-content: center; font-size: 16px; }
   .fehler { color: var(--rot); margin: 0; font-size: 14px; min-height: 0; }
-  footer { border-top: 1px solid var(--linie); padding: 24px 0 40px; color: var(--leise); font-size: 14px; text-align: center; }
+  /* Schluss-Aufruf: rotes Band über die ganze Breite (Webseiten-Standard Muster 1) */
+  .schluss { margin-top: 40px; padding: 72px 0 64px; text-align: center; color: #fff;
+             background: linear-gradient(135deg, var(--rot) 0%, var(--rot-dunkel) 100%); }
+  .schluss h2 { font-size: clamp(30px, 5vw, 46px); margin: 0 0 12px; letter-spacing: -.02em; }
+  .schluss .zwischen { color: rgba(255,255,255,.88); margin-bottom: 0; font-size: 18px; }
+  .schluss .knopf { background: #fff; color: var(--rot); box-shadow: 0 10px 28px rgba(0,0,0,.18); }
+  .schluss .knopf:hover { background: #FFF3F3; }
+  .schluss .systeme { color: #fff; }
+  .schluss .systeme .punkt { color: rgba(255,255,255,.7); }
+  .schluss-punkte { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 26px;
+                    font-size: 14px; color: rgba(255,255,255,.9); }
+  .schluss-punkte span::before { content: "✓"; margin-right: 7px; font-weight: 700; }
+
+  /* Footer in Spalten (Webseiten-Standard Muster 2) */
+  footer { padding: 56px 0 28px; color: var(--leise); font-size: 14px; }
+  .fuss-raster { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 32px; }
+  .fuss-marke p { margin: 12px 0 0; max-width: 280px; }
+  .fuss-marke .marke { color: var(--text); }
+  footer h4 { margin: 4px 0 12px; font-size: 14px; color: var(--text); }
+  footer ul { list-style: none; margin: 0; padding: 0; }
+  footer li { margin: 0 0 9px; }
+  footer li a { text-decoration: none; }
+  footer li a:hover { color: var(--text); text-decoration: underline; }
+  .gross-logo { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 3vw, 28px);
+                margin: 48px 0 0; padding-top: 40px; border-top: 1px solid var(--linie); }
+  .gross-logo img { width: clamp(64px, 14vw, 150px); height: auto; }
+  .gross-logo span { font-size: clamp(76px, 19vw, 210px); font-weight: 800; line-height: 1; letter-spacing: -.04em; color: var(--rot); }
+  .fuss-zeile { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 32px;
+                padding-top: 18px; border-top: 1px solid var(--linie); font-size: 13px; }
+  @media (max-width: 760px) { .fuss-raster { grid-template-columns: 1fr 1fr; } .fuss-marke { grid-column: 1 / -1; } }
 </style>
 </head>
 <body>
@@ -345,6 +374,76 @@
     <div class="klein">Windows 10 und 11 · macOS ab 14 (Sonoma), Mac mit Apple-Chip (M1 oder neuer)</div>
     <div class="klein">Kauf und Zahlung laufen über Digistore24 · 14 Tage Widerrufsrecht</div>
   </section>
+</main>
+
+<section class="schluss">
+  <div class="huelle">
+    <h2>Heute mit Knips anfangen</h2>
+    <p class="zwischen">Ein Klick, und deine KI sieht, was du siehst. Probier es 14 Tage aus.</p>
+    <a class="knopf" href="https://www.digistore24.com/product/761216">14 Tage gratis testen</a>
+    <div class="systeme"><span>Windows</span><span class="punkt">·</span><span>macOS</span></div>
+    <div class="schluss-punkte">
+      <span>Ohne Zahlungsdaten</span>
+      <span>Deine Bilder bleiben auf deinem Rechner</span>
+      <span>Updates kommen von selbst</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="huelle">
+    <div class="fuss-raster">
+      <div class="fuss-marke">
+        <a class="marke" href="#"><img src="bilder/logo.png" alt="">Knips</a>
+        <p>Der Screenshot-Knopf für die Arbeit mit KI. Deine Bilder bleiben auf deinem Rechner.</p>
+      </div>
+      <div>
+        <h4>Produkt</h4>
+        <ul>
+          <li><a href="#funktionen">Funktionen</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="https://www.digistore24.com/product/761216">Gratis testen</a></li>
+          <li><a href="#neu">Was ist neu</a></li>
+          <li><a href="streamdeck.html">Stream Deck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hilfe</h4>
+        <ul>
+          <li><a href="hilfe.html">Anleitung</a></li>
+          <li><a href="#einrichten">Einrichten</a></li>
+          <li><a href="#tasten">Tasten</a></li>
+          <li><a href="#fragen">Häufige Fragen</a></li>
+          <li><a href="mailto:support@top-effektiv.de">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Unternehmen</h4>
+        <ul>
+          <li>TOP effektiv, Österreich</li>
+          <li><a href="partner.html">Partner werden</a></li>
+          <li><a href="mailto:support@top-effektiv.de">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gross-logo" aria-hidden="true"><img src="bilder/logo.png" alt=""><span>Knips</span></div>
+
+    <div class="fuss-zeile">
+      <span>© 2026 TOP effektiv · Kauf und Zahlung über Digistore24</span>
+      <span>Knips hilft beim Datenschutz. Bitte vor dem Einfügen kurz drüberschauen, ob alles Persönliche unscharf ist.</span>
+      <span>Die genannten Marken gehören ihren Inhabern. Keine Verbindung zu Knips.</span>
+    </div>
+  </div>
+</footer>
+
   <script>
     document.getElementById('start').addEventListener('click', function () {
       var film = document.getElementById('film');
@@ -360,14 +459,6 @@
       });
     })();
   </script>
-</main>
-
-<footer>
-  Knips – der 1-Klick-Screenshot · TOP effektiv · Fragen: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a><br>
-  Knips hilft beim Datenschutz. Bitte vor dem Einfügen kurz drüberschauen, ob alles Persönliche unscharf ist.<br>
-  Die genannten Marken gehören ihren Inhabern. Keine Verbindung zu Knips.<br>
-  <a href="partner.html">Partner werden</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
-</footer>
 
 </body>
 </html>
