@@ -450,6 +450,9 @@
       if (!/^[A-Za-z0-9_.-]{2,40}$/.test(aff)) return;
       document.querySelectorAll('a[href*="digistore24.com/product/757565"], a[href*="digistore24.com/product/761216"]').forEach(function (a) {
         a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + 'aff=' + encodeURIComponent(aff);
+        // Testversion: die ID zusätzlich ins freie Digistore-Feld „custom“. Digistore gibt sie an die
+        // Danke-Seite weiter (a=[CUSTOM]), von dort kommt sie in Knips. So zählt auch der spätere Kauf im Programm
+        if (a.href.indexOf('/product/761216') >= 0) a.href += '&custom=' + encodeURIComponent(aff);
       });
     })();
   </script>
