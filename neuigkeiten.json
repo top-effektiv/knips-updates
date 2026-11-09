@@ -1,4 +1,7 @@
 {
+ "1.1.23": [
+  "Kleine Verbesserungen und Fehler behoben."
+ ],
  "1.1.22": [
   "Neu: Knips 14 Tage gratis testen. Wer Knips neu installiert, kann es zwei Wochen lang\nausprobieren, nur mit Name und E-Mail, ohne Zahlungsdaten.",
   "Während der Testzeit zeigt Knips, wie viele Tage noch bleiben, und erinnert kurz vor dem Ende.\nGekauft? Dann einfach die neue Bestellung eintragen, alles bleibt wie es ist.",
@@ -7,7 +10,7 @@
   "Kurz drüberschauen, nachbessern, „PDF sichern“: Das neue PDF besteht nur aus Bildern, der Text ist wirklich weg.\nUnd die Symbole in den Menüs sind jetzt in Knips-Rot."
  ],
  "1.1.21": [
-  "Neu: das Knips-Partnerprogramm. Du empfiehlst Knips weiter und bekommst 10 % von jedem Kauf.\nEinmal einrichten: oben rechts auf „Empfehlen · 10 %“ → „Werde Partner“.",
+  "Neu: das Knips-Partnerprogramm. Du empfiehlst Knips weiter und bekommst 10 % von jedem Kauf.\nEinmal einrichten: oben rechts auf „Weiterempfehlen“ → ganz unten „Partnerprogramm“.",
   "Knips weitergeben geht jetzt mit einem Klick: WhatsApp, E-Mail, LinkedIn, Xing, Facebook oder Telegram,\nder Text steht schon fertig drin. Für das Gegenüber gibt es einen QR-Code.",
   "Datenschutz erkennt Namen jetzt auch in Tabellen ohne Überschrift: Steht ein Vorname allein in einer Zelle,\nwerden er und der Nachname daneben unkenntlich, und dieselben Namen auch an jeder anderen Stelle im Bild.",
   "Sperrt Windows den Bilder-Ordner (Schutz vor Erpresser-Programmen), startet Knips trotzdem.\nDie Bilder kommen dann in einen sicheren Ersatz-Ordner, und Knips sagt dir einmal, wo er liegt."
@@ -95,6 +98,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.23": "09.11.2026",
   "1.1.22": "06.11.2026",
   "1.1.21": "04.11.2026",
   "1.1.20": "03.11.2026",
