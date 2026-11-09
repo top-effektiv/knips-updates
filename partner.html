@@ -6,7 +6,7 @@
 <title>Knips-Partner werden</title>
 <meta name="description" content="Knips weiterempfehlen und 10 % von jedem Kauf bekommen. In zwei Minuten eingerichtet, abgerechnet über Digistore24.">
 <link rel="icon" href="bilder/logo.png">
-<link rel="stylesheet" href="kauf.css?v=2">
+<link rel="stylesheet" href="kauf.css?v=4">
 <style>
   .eingabe { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 12px; }
   .eingabe input { flex: 1 1 220px; font: inherit; font-size: 16px; padding: 10px 14px; border: 1px solid var(--linie);
@@ -16,6 +16,19 @@
   .link-zeile { display: none; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px 0 0;
                 border-top: 1px solid var(--linie); }
   .link-zeile.da { display: grid; }
+  .abschnitt { font-size: 24px; margin: 34px 0 14px; letter-spacing: -.01em; }
+  .schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .schritt { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 18px 18px 20px; }
+  .schritt svg { display: block; width: 100%; height: 84px; margin: 0 0 10px; }
+  .schritt .strich { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .schritt .akzent { fill: none; stroke: var(--rot); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .schritt .nr { width: 24px; height: 24px; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; }
+  .schritt h3 { font-size: 17px; margin: 8px 0 4px; }
+  .schritt p { margin: 0; color: var(--leise); font-size: 15px; }
+  .haken { list-style: none; margin: 0; padding: 0; }
+  .haken li { position: relative; padding: 6px 0 6px 30px; color: var(--leise); font-size: 16px; }
+  .haken li::before { content: "✓"; position: absolute; left: 4px; color: var(--rot); font-weight: 700; }
+  @media (max-width: 640px) { .schritte { grid-template-columns: 1fr; } .schritt svg { height: 70px; } }
   .link-zeile button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px;
                        background: transparent; color: var(--text); cursor: pointer; }
 </style>
@@ -25,31 +38,56 @@
   <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
 
   <h1>Knips empfehlen und mitverdienen</h1>
-  <p class="unter">Du empfiehlst Knips weiter und bekommst 10&nbsp;% von jedem Kauf über deinen Link.</p>
+  <p class="unter">Du empfiehlst Knips sowieso gern weiter? Dann bekommst du 10&nbsp;% von jedem Kauf über deinen Link. In zwei Minuten eingerichtet.</p>
 
-  <div class="karte">
-    <h2><span class="nr">1</span>Partner werden</h2>
-    <p>Bei Digistore24 als Partner für Knips anmelden. Wer noch kein Konto hat, legt es dort kostenlos an. Du bist sofort freigeschaltet.</p>
-    <a class="knopf" href="https://www.digistore24.com/signup/757565/" target="_blank" rel="noopener">Bei Digistore24 anmelden</a>
+  <h2 class="abschnitt">So funktioniert's</h2>
+  <div class="schritte">
+    <div class="schritt">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><path class="strich" d="M18 64c10-6 20 4 30-2s14-10 22-4"/><path class="strich" d="M74 52 98 16l8 6-24 36-11 5z"/><path class="akzent" d="M98 16l8 6"/></svg>
+      <span class="nr">1</span>
+      <h3>Anmelden</h3>
+      <p>Bei Digistore24 als Partner für Knips anmelden. Kostenlos, du bist sofort freigeschaltet.</p>
+    </div>
+    <div class="schritt">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><rect class="strich" x="22" y="30" width="40" height="20" rx="10"/><rect class="akzent" x="58" y="30" width="40" height="20" rx="10"/><path class="strich" d="M48 40h24"/></svg>
+      <span class="nr">2</span>
+      <h3>Link holen</h3>
+      <p>Deine Digistore24-ID unten eintragen, schon steht dein eigener Knips-Link da.</p>
+    </div>
+    <div class="schritt">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><path class="strich" d="M20 42 100 14 76 66 60 48z"/><path class="strich" d="M60 48 100 14"/><path class="akzent" d="M60 48l-4 16 12-9"/></svg>
+      <span class="nr">3</span>
+      <h3>Weitergeben</h3>
+      <p>Per WhatsApp, Mail oder Beitrag teilen. Für jeden Kauf darüber bekommst du 10&nbsp;%.</p>
+    </div>
   </div>
 
-  <div class="karte">
-    <h2><span class="nr">2</span>Deinen Link holen</h2>
-    <p>Gib deine Digistore24-ID ein. Sie steht in Digistore24 oben rechts bei deinem Namen.</p>
+  <div class="karte" id="link">
+    <h2>Hol dir deinen Link</h2>
+    <p>Noch nicht angemeldet? <a href="https://www.digistore24.com/signup/757565/" target="_blank" rel="noopener">Hier bei Digistore24 als Partner für Knips anmelden</a>. Danach gib deine Digistore24-ID ein. Sie steht in Digistore24 oben rechts bei deinem Namen.</p>
     <div class="eingabe"><input id="id" type="text" placeholder="Deine Digistore24-ID" autocomplete="off" spellcheck="false"></div>
     <div class="link-zeile" id="link-zeile"><span id="mein-link"></span><button type="button" id="kopieren">Kopieren</button></div>
     <p class="klein" style="margin-top:12px">Wer über diesen Link kauft, wird dir zugeordnet. Die ID wird nirgends gespeichert, der Link entsteht nur hier in deinem Browser.</p>
+    <p class="klein"><b>Du nutzt Knips selbst?</b> Dann geht es noch leichter: In Knips oben rechts auf „Weiterempfehlen“, ganz unten auf „Partnerprogramm“ und die ID eintragen. Ab dann steckt dein Link in jedem Text, den du über Knips verschickst, auch im QR-Code.</p>
   </div>
 
+  <h2 class="abschnitt">Für wen ist das?</h2>
   <div class="karte">
-    <h2><span class="nr">3</span>Weitergeben</h2>
-    <p>Schick den Link per WhatsApp, Mail oder in einem Beitrag. Am besten mit ein, zwei Sätzen, wofür du Knips selbst nutzt.</p>
-    <p><b>Du nutzt Knips selbst?</b> Dann geht es noch leichter: In Knips oben rechts auf „Empfehlen · 10 %“ und dann auf „Werde Partner“ klicken und die ID eintragen. Ab dann steckt dein Link in jedem Text, den du über Knips verschickst, auch im QR-Code.</p>
+    <ul class="haken">
+      <li>Berater, Trainer und Coaches, die ihren Kunden gute Werkzeuge zeigen</li>
+      <li>Alle mit Newsletter, LinkedIn- oder YouTube-Publikum</li>
+      <li>Leiter von Communitys, Gruppen und Netzwerken</li>
+      <li>Kollegen, die im Team gern sagen: „Schau, so geht das schneller.“</li>
+    </ul>
   </div>
 
-  <div class="karte">
-    <h2><span class="nr">€</span>Abrechnung</h2>
-    <p>Die Provision rechnet Digistore24 ab und zahlt sie direkt an dich aus. Deine Verkäufe siehst du jederzeit in deinem Digistore24-Konto.</p>
+  <h2 class="abschnitt">Häufige Fragen</h2>
+  <div class="fragen">
+    <details><summary>Was kostet mich das?</summary><p>Nichts. Die Anmeldung bei Digistore24 ist kostenlos, du gehst keine Verpflichtung ein.</p></details>
+    <details><summary>Wann und wie bekomme ich mein Geld?</summary><p>Digistore24 rechnet die Provision ab und zahlt sie direkt an dich aus. Deine Verkäufe siehst du jederzeit in deinem Digistore24-Konto.</p></details>
+    <details><summary>Bekomme ich auch etwas, wenn jemand das Abo verlängert?</summary><p>Ja. Bei jeder Verlängerung im Jahres-Abo bekommst du wieder deine 10&nbsp;%.</p></details>
+    <details><summary>Was ist, wenn jemand zuerst gratis testet und später kauft?</summary><p>Das zählt auch. Testet jemand über deinen Link und kauft danach direkt in Knips, merkt sich Knips, dass er von dir kam.</p></details>
+    <details><summary>Muss ich Knips selbst nutzen?</summary><p>Nein. Es hilft aber sehr: Wer erzählen kann, wofür er Knips selbst nutzt, überzeugt am meisten.</p></details>
   </div>
 
   <p class="zweig">Fragen? Schreib mir: <a href="mailto:support@top-effektiv.de">support@top-effektiv.de</a></p>
