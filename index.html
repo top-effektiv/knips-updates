@@ -175,8 +175,10 @@
   .stimme { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; margin: 0; }
   .stimme .sterne { color: #F2B01E; font-size: 18px; letter-spacing: 2px; margin-bottom: 10px; }
   .stimme blockquote { margin: 0 0 16px; font-size: 16px; line-height: 1.55; flex: 1; }
-  .stimme figcaption { font-size: 14px; color: var(--leise); }
+  .stimme figcaption { font-size: 14px; color: var(--leise); display: flex; align-items: center; gap: 14px; }
   .stimme figcaption b { display: block; color: var(--text); font-size: 15px; }
+  .stimme .avatar { flex: 0 0 52px; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: var(--linie); color: var(--leise); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; letter-spacing: .5px; box-shadow: 0 0 0 1px var(--linie); }
+  .stimme .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .stimme.platzhalter { border-style: dashed; opacity: .55; }
 </style>
 </head>
@@ -343,22 +345,22 @@
       <figure class="stimme">
         <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
         <blockquote>„Knips nutze ich viel öfter als früher Screenshots. Mein Lieblingsfall: Ein Fenster poppt auf und ich weiß nicht, was ich anklicken soll. Tastenkürzel, Ausschnitt markieren, bei Claude einfügen: ‚Was mach ich da?‘ Zack, fertig. Geht schnell, ist immer sofort zur Hand und einfach genial. Gebe ich nicht mehr her!“</blockquote>
-        <figcaption><b>Judith Kabaus</b>Geschäftsführerin, Kabaus &amp; Partner Veranstaltungsservice<br>Bewertung auf Google</figcaption>
+        <figcaption><span class="avatar"><img src="bilder/stimmen/judith-kabaus.jpg" alt="Judith Kabaus" width="52" height="52" loading="lazy"></span><span><b>Judith Kabaus</b>Geschäftsführerin, Kabaus &amp; Partner Veranstaltungsservice<br>Bewertung auf Google</span></figcaption>
       </figure>
       <figure class="stimme">
         <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
         <blockquote>„Mega Tool für alle, die Wert auf Datenschutz legen. Auch die ständige Weiterentwicklung und Umsetzung von Verbesserungsvorschlägen gefällt mir. Sehr intuitiv und einfach im Einsatz. Sehr empfehlenswert!“</blockquote>
-        <figcaption><b>Christian Schubbert</b>Vermögensberater<br>Bewertung auf Google</figcaption>
+        <figcaption><span class="avatar"><img src="bilder/stimmen/christian-schubbert.jpg" alt="Christian Schubbert" width="52" height="52" loading="lazy"></span><span><b>Christian Schubbert</b>Vermögensberater<br>Bewertung auf Google</span></figcaption>
       </figure>
       <figure class="stimme">
         <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
         <blockquote>„Mit Knips kann ich wunderbar Screenshots in Sekunden erstellen und in die KI einfügen. Ausschnitt markieren, kopieren, einfügen. Spart mir jede Menge Fummelei […]. Tolles Tool, danke 😜👍“</blockquote>
-        <figcaption><b>Stephan Lippert</b>Vermögensberater<br>Bewertung auf Google</figcaption>
+        <figcaption><span class="avatar"><img src="bilder/stimmen/stephan-lippert.jpg" alt="Stephan Lippert" width="52" height="52" loading="lazy"></span><span><b>Stephan Lippert</b>Vermögensberater<br>Bewertung auf Google</span></figcaption>
       </figure>
       <figure class="stimme">
         <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
         <blockquote>„Seit ich Knips verwende, spare ich mir jeden Tag die Fummelei mit Screenshots. Sehr einfach zu bedienen, klare Empfehlung!“</blockquote>
-        <figcaption><b>Benedikt Kampik</b>Makler und Bauträger, Kampik Real Estate<br>Bewertung auf Google</figcaption>
+        <figcaption><span class="avatar"><img src="bilder/stimmen/benedikt-kampik.jpg" alt="Benedikt Kampik" width="52" height="52" loading="lazy"></span><span><b>Benedikt Kampik</b>Makler und Bauträger, Kampik Real Estate<br>Bewertung auf Google</span></figcaption>
       </figure>
     </div>
   </section>
