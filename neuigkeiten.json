@@ -1,4 +1,14 @@
 {
+ "1.1.26": [
+  "Bild herausziehen: In „Alle Bilder“ ein Bild anfassen und mit gedrückter Maustaste\ndirekt in WhatsApp, eine Mail oder einen Ordner ziehen.",
+  "Angekreuzte Bilder ☑ ziehst du alle auf einmal hinüber.",
+  "Beim Bearbeiten geht es über „✥ Herausziehen“ oben in der Leiste."
+ ],
+ "1.1.25": [
+  "„⬇ Herunterladen“ statt „Speichern“: ein Klick, und dein Bild liegt als Datei in „Downloads“.\nÜber ▾ geht „Speichern unter …“ und „Als PDF“.",
+  "Eine Lizenz gilt für zwei deiner Rechner.",
+  "Am Mac: Das Update-Fenster zeigt dir die drei Schritte."
+ ],
  "1.1.24": [
   "Kleine Verbesserungen und Fehler behoben.",
   "Am Mac: Knips ist jetzt von Apple geprüft, beim Öffnen kommt keine Warnung mehr.\nDein Mac fragt danach einmal neu, ob Knips den Bildschirm aufnehmen darf. Einfach erlauben."
@@ -102,6 +112,8 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.26": "10.11.2026",
+  "1.1.25": "10.11.2026",
   "1.1.24": "10.11.2026",
   "1.1.23": "09.11.2026",
   "1.1.22": "06.11.2026",
