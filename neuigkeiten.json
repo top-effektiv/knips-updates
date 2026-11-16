@@ -1,4 +1,11 @@
 {
+ "1.1.28": [
+  "Neu: der Datenschutz-Wächter. Knips prüft nach dem Knipsen still, ob Kundendaten im Bild sind,\nund fragt dich kurz: unkenntlich machen? Einschalten am ▾ beim Datenschutz-Knopf.\nKontoauszüge schwärzt Knips jetzt gründlicher: ganze IBAN und BIC, Anschrift, Berater, Buchungsnummern.",
+  "Knips merkt sich, woher ein Screenshot kommt (z. B. Zoom, Outlook, Chrome). Du siehst es unter\njedem Bild und findest links unter „Woher“ alle Bilder aus einem Programm.",
+  "Deine KI holt sich deine Screenshots selbst: Sag Claude oder ChatGPT einfach „Nimm meinen letzten\nScreenshot“. Einrichten mit einem Klick unter ⚙ Einstellungen → KI-Anbindung.",
+  "Aus „Stichwort“ wird „Tag“: links in der Bibliothek zum Auf- und Zuklappen, mit „Tags verwalten“\nzum Umbenennen und Entfernen.",
+  "Neu beim Markieren: der Scheinwerfer (L). Bereich aufziehen, er bleibt hell, der Rest wird dunkel.\nSo sieht jeder sofort, worauf es ankommt."
+ ],
  "1.1.26": [
   "Bild herausziehen: In „Alle Bilder“ ein Bild anfassen und mit gedrückter Maustaste\ndirekt in WhatsApp, eine Mail oder einen Ordner ziehen.",
   "Angekreuzte Bilder ☑ ziehst du alle auf einmal hinüber.",
@@ -89,7 +96,7 @@
  ],
  "1.1.7": [
   "Aufgeräumt: „⚙ Einstellungen“ unten öffnet jetzt ein richtiges Fenster —\nDatenschutz (was unkenntlich wird) und Tasten.",
-  "Neue Zentrale wie Snagit: links immer die Navigation (Alle Bilder, Tage, Stichwörter, Ordner),\noben „Neuer Screenshot“ und „Bearbeiten“. Beim Bearbeiten blätterst du mit ◀ ▶,\nmit ☰ klappst du das linke Menü für mehr Platz ein.",
+  "Neue Zentrale wie Snagit: links immer die Navigation (Alle Bilder, Tage, Stichworte, Ordner),\noben „Neuer Screenshot“ und „Bearbeiten“. Beim Bearbeiten blätterst du mit ◀ ▶,\nmit ☰ klappst du das linke Menü für mehr Platz ein.",
   "Am Knopf „Datenschutz“ gibt es ein kleines ▾ mit allem zum Datenschutz.",
   "Alle Knöpfe oben stehen auf einer Linie."
  ],
@@ -100,7 +107,7 @@
  "1.1.5": [
   "Nach dem Knipsen nur noch ein kurzes „✓ Kopiert“ — keine Leiste mehr, nichts zu schließen.\nMarkieren, „📋 Text herauslesen“ und „Als PDF“ findest du in der Zentrale.",
   "Stichwort für Events: vorher „Ab jetzt: Espresso“ setzen — jeder Screenshot bekommt es,\nam Ende mit einem Klick alle herunterladen.",
-  "Stichwörter auch nachträglich vergeben: Rechtsklick auf ein Bild.",
+  "Stichworte auch nachträglich vergeben: Rechtsklick auf ein Bild.",
   "Mehrere Bilder auswählen: in „Alle Bilder“ die Kästchen ☐ anklicken (oder einen ganzen Tag)\nund oben auf „Herunterladen“ — du wählst, wohin (Enter = Downloads), sie kommen in einen eigenen Ordner.",
   "Schalter „Auch in Downloads“: jeder Screenshot liegt zusätzlich in deinem Download-Ordner —\nbereit zum Hochladen in die KI oder als Mail-Anhang, ohne erst zu speichern.",
   "Dieses Fenster: nach jedem Update siehst du, was neu ist."
@@ -112,6 +119,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.28": "12.11.2026",
   "1.1.26": "10.11.2026",
   "1.1.25": "10.11.2026",
   "1.1.24": "10.11.2026",
