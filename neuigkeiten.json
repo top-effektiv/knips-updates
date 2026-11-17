@@ -1,4 +1,13 @@
 {
+ "1.1.29": [
+  "Text in mehreren Zeilen: Lange Texte brechen von selbst um und laufen nicht mehr übers Bild hinaus.\nEnter macht eine neue Zeile, fertig bist du mit einem Klick daneben oder Esc.\nDoppelklick auf einen Text öffnet ihn wieder: etwas löschen oder dazuschreiben.",
+  "Schriftgröße zum Wählen: klein, mittel oder groß, dazu fett oder normal.\nUnten am Text-Knopf auf „▾“.",
+  "Textfarbe zum Wählen: Rot, Schwarz, Weiß, Blau, Grün oder Gelb. Knips merkt sich deine Wahl.\nPfeil, Rahmen und Nummer bleiben rot.",
+  "Jede Zeile kann anders aussehen: Zeile anklicken (oder markieren), dann am „▾“ Farbe, Größe\noder fett wählen. Strg+B schaltet fett ein und aus, wie in Word.",
+  "Schon geschriebenen Text anklicken und dann Farbe oder Größe wählen: Er ändert sich sofort.",
+  "Während der Gratis-Probe zeigt das Menü beim Knips-Symbol, wie viele Tage noch bleiben.",
+  "Am Mac: Beim Ausschnitt kommt das Knips-Fadenkreuz wie unter Windows (Esc = abbrechen),\ndie Menüleiste ist auf Deutsch, und die Tasten stehen so da, wie sie auf der Tastatur heißen (⌃⌥1)."
+ ],
  "1.1.28": [
   "Neu: der Datenschutz-Wächter. Knips prüft nach dem Knipsen still, ob Kundendaten im Bild sind,\nund fragt dich kurz: unkenntlich machen? Einschalten am ▾ beim Datenschutz-Knopf.\nKontoauszüge schwärzt Knips jetzt gründlicher: ganze IBAN und BIC, Anschrift, Berater, Buchungsnummern.",
   "Knips merkt sich, woher ein Screenshot kommt (z. B. Zoom, Outlook, Chrome). Du siehst es unter\njedem Bild und findest links unter „Woher“ alle Bilder aus einem Programm.",
@@ -119,6 +128,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.29": "17.11.2026",
   "1.1.28": "12.11.2026",
   "1.1.26": "10.11.2026",
   "1.1.25": "10.11.2026",
