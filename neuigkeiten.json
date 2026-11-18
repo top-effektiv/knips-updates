@@ -1,4 +1,8 @@
 {
+ "1.1.30": [
+  "Einstellungen passen jetzt auf jeden Bildschirm: Ist er kleiner, rollst du mit dem Mausrad,\nund „Speichern“ bleibt unten immer sichtbar.",
+  "Fenster lassen sich jetzt größer ziehen und maximieren (Doppelklick auf die Titelleiste)."
+ ],
  "1.1.29": [
   "Text in mehreren Zeilen: Lange Texte brechen von selbst um und laufen nicht mehr übers Bild hinaus.\nEnter macht eine neue Zeile, fertig bist du mit einem Klick daneben oder Esc.\nDoppelklick auf einen Text öffnet ihn wieder: etwas löschen oder dazuschreiben.",
   "Schriftgröße zum Wählen: klein, mittel oder groß, dazu fett oder normal.\nUnten am Text-Knopf auf „▾“.",
@@ -128,6 +132,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.30": "18.11.2026",
   "1.1.29": "17.11.2026",
   "1.1.28": "12.11.2026",
   "1.1.26": "10.11.2026",
