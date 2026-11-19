@@ -1,4 +1,9 @@
 {
+ "1.1.32": [
+  "Größer und kleiner beim Markieren und beim PDF schwärzen: Strg + Mausrad (Mac: Cmd + Mausrad)\noder unten rechts − und +. Das Mausrad allein rollt, mit Umschalt zur Seite.",
+  "„Einpassen“ zeigt das ganze Bild. Ziehst du das Fenster größer, wächst es mit.\nBeim PDF gibt es dazu „Seitenbreite“: am Seitenende rollst du einfach in die nächste Seite.",
+  "Die Werkzeugleiste bricht bei schmalem Fenster in eine zweite Reihe um.\nSo bleiben alle Knöpfe sichtbar, auch „Abbrechen“ und „PDF sichern“, gerade bei zwei Bildschirmen."
+ ],
  "1.1.31": [
   "Neu: „So nimmst du auf“. Eine kleine bewegte Vorführung zeigt in zehn Sekunden die drei Arten:\nZiehen = Bereich, Klick = ganzes Fenster, Umschalttaste ⇧ + Klick = ganzer Bildschirm.",
   "Sie kommt einmal vor deinem nächsten Screenshot. Danach findest du sie jederzeit\nam ▾ beim roten Knopf „Neuer Screenshot“ und oben rechts unter ?.",
@@ -138,6 +143,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.32": "19.11.2026",
   "1.1.31": "19.11.2026",
   "1.1.30": "18.11.2026",
   "1.1.29": "17.11.2026",
