@@ -1,4 +1,7 @@
 {
+ "1.1.33": [
+  "Knips-Fenster wie Einstellungen, Neuigkeiten oder „Teile Knips“ stehen nicht mehr dauerhaft\nüber deinen anderen Programmen. Wechselst du zu Outlook & Co., kommen diese nach vorne."
+ ],
  "1.1.32": [
   "Größer und kleiner beim Markieren und beim PDF schwärzen: Strg + Mausrad (Mac: Cmd + Mausrad)\noder unten rechts − und +. Das Mausrad allein rollt, mit Umschalt zur Seite.",
   "„Einpassen“ zeigt das ganze Bild. Ziehst du das Fenster größer, wächst es mit.\nBeim PDF gibt es dazu „Seitenbreite“: am Seitenende rollst du einfach in die nächste Seite.",
@@ -143,6 +146,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.33": "19.11.2026",
   "1.1.32": "19.11.2026",
   "1.1.31": "19.11.2026",
   "1.1.30": "18.11.2026",
