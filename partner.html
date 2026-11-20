@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knips-Partner werden</title>
-<meta name="description" content="Knips weiterempfehlen und 10 % von jedem Kauf bekommen. In zwei Minuten eingerichtet, abgerechnet über Digistore24.">
+<meta name="description" content="Knips weiterempfehlen und 10 % von jedem Kauf bekommen. Kostenlos, in zwei Minuten eingerichtet, abgerechnet über Digistore24.">
 <link rel="icon" href="bilder/logo.png">
 <link rel="stylesheet" href="kauf.css?v=4">
 <style>
@@ -16,21 +16,39 @@
   .link-zeile { display: none; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px 0 0;
                 border-top: 1px solid var(--linie); }
   .link-zeile.da { display: grid; }
+  .link-zeile button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px;
+                       background: transparent; color: var(--text); cursor: pointer; }
   .abschnitt { font-size: 24px; margin: 34px 0 14px; letter-spacing: -.01em; }
-  .schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
-  .schritt { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 18px 18px 20px; }
-  .schritt svg { display: block; width: 100%; height: 84px; margin: 0 0 10px; }
-  .schritt .strich { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-  .schritt .akzent { fill: none; stroke: var(--rot); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-  .schritt .nr { width: 24px; height: 24px; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; background: var(--rot); color: #fff; }
-  .schritt h3 { font-size: 17px; margin: 8px 0 4px; }
-  .schritt p { margin: 0; color: var(--leise); font-size: 15px; }
   .haken { list-style: none; margin: 0; padding: 0; }
   .haken li { position: relative; padding: 6px 0 6px 30px; color: var(--leise); font-size: 16px; }
   .haken li::before { content: "✓"; position: absolute; left: 4px; color: var(--rot); font-weight: 700; }
-  @media (max-width: 640px) { .schritte { grid-template-columns: 1fr; } .schritt svg { height: 70px; } }
-  .link-zeile button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px;
-                       background: transparent; color: var(--text); cursor: pointer; }
+  .fragen p { margin: 10px 0 0; color: var(--leise); }
+  main > footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--linie); font-size: 14px; color: var(--leise); }
+  .neu { border: 1px solid var(--linie); border-radius: 10px; padding: 10px 14px; margin: 0 0 14px; background: var(--grund); }
+  .neu summary { cursor: pointer; font-weight: 600; color: var(--rot); }
+  .neu-inhalt { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: start; margin-top: 12px; }
+  .neu-inhalt img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--linie); }
+  .neu-inhalt ol { margin: 0; padding-left: 20px; color: var(--leise); font-size: 15px; }
+  .neu-inhalt li { margin-bottom: 6px; }
+  .cta-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin: 0 0 30px; }
+  .leise-link { color: var(--leise); font-size: 15px; }
+  .schritt-block { background: var(--karte); border: 1px solid var(--linie); border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .schritt-block > p { color: var(--leise); margin: 0 0 14px; }
+  .schritt-kopf { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .schritt-kopf h2 { margin: 0; font-size: 21px; }
+  .gross-nr { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--rot); color: #fff; font-weight: 700;
+              display: inline-flex; align-items: center; justify-content: center; font-size: 17px; }
+  .schritt-block > .knopf { margin-bottom: 14px; }
+  .tipp { background: var(--grund); border-radius: 10px; padding: 12px 14px; font-size: 14px; color: var(--leise); }
+  .reiter { display: flex; gap: 8px; margin: 4px 0 12px; flex-wrap: wrap; }
+  .reiter-knopf { font: inherit; font-size: 15px; padding: 7px 16px; border: 1px solid var(--linie); border-radius: 999px;
+                  background: transparent; color: var(--text); cursor: pointer; }
+  .reiter-knopf.aktiv { background: var(--rot); border-color: var(--rot); color: #fff; }
+  .vorlage-box { border: 1px solid var(--linie); border-radius: 10px; padding: 16px 18px; }
+  .vorlage-box .vorlage { margin: 0 0 14px; color: var(--text); }
+  .vorlage-box .knopf { font-size: 16px; padding: 10px 22px; border: 0; cursor: pointer; font-family: inherit; }
+  html { scroll-behavior: smooth; }
+  @media (max-width: 640px) { .neu-inhalt { grid-template-columns: 1fr; } .neu-inhalt img { max-width: 260px; } }
 </style>
 </head>
 <body>
@@ -38,38 +56,63 @@
   <a class="marke" href="./"><img src="bilder/logo.png" alt="">Knips</a>
 
   <h1>Knips empfehlen und mitverdienen</h1>
-  <p class="unter">Du empfiehlst Knips sowieso gern weiter? Dann bekommst du 10&nbsp;% von jedem Kauf über deinen Link. In zwei Minuten eingerichtet.</p>
-
-  <h2 class="abschnitt">So funktioniert's</h2>
-  <div class="schritte">
-    <div class="schritt">
-      <svg viewBox="0 0 120 80" aria-hidden="true"><path class="strich" d="M18 64c10-6 20 4 30-2s14-10 22-4"/><path class="strich" d="M74 52 98 16l8 6-24 36-11 5z"/><path class="akzent" d="M98 16l8 6"/></svg>
-      <span class="nr">1</span>
-      <h3>Anmelden</h3>
-      <p>Bei Digistore24 als Partner für Knips anmelden. Kostenlos, du bist sofort freigeschaltet.</p>
-    </div>
-    <div class="schritt">
-      <svg viewBox="0 0 120 80" aria-hidden="true"><rect class="strich" x="22" y="30" width="40" height="20" rx="10"/><rect class="akzent" x="58" y="30" width="40" height="20" rx="10"/><path class="strich" d="M48 40h24"/></svg>
-      <span class="nr">2</span>
-      <h3>Link holen</h3>
-      <p>Deine Digistore24-ID unten eintragen, schon steht dein eigener Knips-Link da.</p>
-    </div>
-    <div class="schritt">
-      <svg viewBox="0 0 120 80" aria-hidden="true"><path class="strich" d="M20 42 100 14 76 66 60 48z"/><path class="strich" d="M60 48 100 14"/><path class="akzent" d="M60 48l-4 16 12-9"/></svg>
-      <span class="nr">3</span>
-      <h3>Weitergeben</h3>
-      <p>Per WhatsApp, Mail oder Beitrag teilen. Für jeden Kauf darüber bekommst du 10&nbsp;%.</p>
-    </div>
+  <p class="unter">Du kennst Leute, die jeden Tag Screenshots machen? Dann bekommst du 10&nbsp;% von jedem Kauf über deinen Link. Kostenlos und in zwei Minuten eingerichtet.</p>
+  <div class="cta-zeile">
+    <a class="leise-link" href="#schritt-2">Schon bei Digistore24 angemeldet? Weiter zu Schritt 2 ↓</a>
   </div>
 
-  <div class="karte" id="link">
-    <h2>Hol dir deinen Link</h2>
-    <p>Noch nicht angemeldet? <a href="https://www.digistore24.com/signup/757565/" target="_blank" rel="noopener">Hier bei Digistore24 als Partner für Knips anmelden</a>. Danach gib deine Digistore24-ID ein. Sie steht in Digistore24 oben rechts bei deinem Namen.</p>
+  <section class="schritt-block" id="schritt-1">
+    <div class="schritt-kopf"><span class="gross-nr">1</span><h2>Bei Digistore24 anmelden</h2></div>
+    <p>Digistore24 zahlt dir die Provision aus. Die Anmeldung ist kostenlos, und du bist sofort Partner für Knips.</p>
+    <a class="knopf" href="https://www.digistore24.com/signup/757565,761216/" target="_blank" rel="noopener">Kostenlos Partner werden</a>
+    <details class="neu">
+      <summary>Noch nie bei Digistore24? So geht die Anmeldung</summary>
+      <div class="neu-inhalt">
+        <img src="bilder/partner-digistore-anmeldung.jpg" alt="Anmeldung bei Digistore24: oben „Bewerben, als Affiliate verdienen“ auswählen" width="370" height="500">
+        <ol>
+          <li>Ein Fenster zu Cookies erscheint: <b>„Nur notwendige“</b> reicht.</li>
+          <li>Bei „Ich möchte …“ auf <b>„Bewerben“</b> klicken (Als Affiliate verdienen). Nicht „Verkaufen“.</li>
+          <li>Vorname, Nachname, Mail und ein Passwort eintragen, dann <b>„Weiter“</b>.</li>
+          <li>Bei <b>„Öffentliche ID“</b> denkst du dir deinen Namen bei Digistore24 aus, zum Beispiel deinen Nachnamen. Das ist deine Digistore24-ID, merk sie dir: Du brauchst sie gleich in Schritt 2.</li>
+          <li>Land wählen, den Nutzungsbedingungen zustimmen, <b>„Konto erstellen“</b>. Die Marketing-Mails von Digistore24 kannst du leer lassen.</li>
+        </ol>
+      </div>
+    </details>
+  </section>
+
+  <section class="schritt-block" id="schritt-2">
+    <div class="schritt-kopf"><span class="gross-nr">2</span><h2>Deinen Link holen</h2></div>
+    <p>Trag deine Digistore24-ID ein. Du findest sie in Digistore24 oben rechts bei deinem Namen.</p>
     <div class="eingabe"><input id="id" type="text" placeholder="Deine Digistore24-ID" autocomplete="off" spellcheck="false"></div>
     <div class="link-zeile" id="link-zeile"><span id="mein-link"></span><button type="button" id="kopieren">Kopieren</button></div>
-    <p class="klein" style="margin-top:12px">Wer über diesen Link kauft, wird dir zugeordnet. Die ID wird nirgends gespeichert, der Link entsteht nur hier in deinem Browser.</p>
-    <p class="klein"><b>Du nutzt Knips selbst?</b> Dann geht es noch leichter: In Knips oben rechts auf „Weiterempfehlen“, ganz unten auf „Partnerprogramm“ und die ID eintragen. Ab dann steckt dein Link in jedem Text, den du über Knips verschickst, auch im QR-Code.</p>
-  </div>
+    <p class="klein">Wer über diesen Link testet oder kauft, wird dir zugeordnet. Die ID wird nirgends gespeichert, der Link entsteht nur hier in deinem Browser.</p>
+    <div class="tipp"><b>Du nutzt Knips selbst?</b> Dann trag die ID einmal im Programm ein: oben rechts „Weiterempfehlen“, ganz unten „Partnerprogramm“. Ab dann steckt dein Link in jedem Text, den du über Knips verschickst, auch im QR-Code.</div>
+  </section>
+
+  <section class="schritt-block" id="schritt-3">
+    <div class="schritt-kopf"><span class="gross-nr">3</span><h2>Weitergeben</h2></div>
+    <p>Such dir aus, wo du es teilst. Der Text ist fertig, <span id="hinweis-link">dein Link kommt hinein, sobald du in Schritt 2 deine ID eingetragen hast.</span></p>
+    <div class="reiter" role="tablist">
+      <button type="button" class="reiter-knopf aktiv" data-ziel="kurz">WhatsApp</button>
+      <button type="button" class="reiter-knopf" data-ziel="mail">Mail</button>
+      <button type="button" class="reiter-knopf" data-ziel="beitrag">LinkedIn</button>
+    </div>
+    <div class="vorlage-box">
+      <p class="vorlage" data-art="kurz">Ich mach meine Screenshots jetzt mit Knips. Ein Klick, kurz markieren, fertig, und ab in die Mail, in WhatsApp oder zu ChatGPT. Namen kann man mit einem Klick unscharf machen. Spart mir jeden Tag Zeit. Schau's dir an: <span class="lnk">https://123knips.com/</span></p>
+      <p class="vorlage" data-art="mail" hidden style="white-space: pre-line">Betreff: Tipp: Knips für Screenshots
+
+[Vorname],
+
+ich hab ein kleines Programm, das mir jeden Tag Zeit spart: Knips. Ein Klick, und der Screenshot ist fertig. Ich kann gleich etwas markieren, Namen unscharf machen oder den Text herauslesen. Danach geht das Bild direkt in eine Mail, an Kunden, ins Team oder zu ChatGPT.
+
+Du kannst es 14 Tage gratis testen: <span class="lnk">https://123knips.com/</span>
+
+Herzliche Grüße
+[Dein Name]</p>
+      <p class="vorlage" data-art="beitrag" hidden>Ein kleines Werkzeug, das ich nicht mehr hergeben möchte: Knips. Ein Klick, und der Screenshot ist fertig. Markieren, Kundennamen unscharf machen, Text herauslesen und direkt weiter in die Mail, ins Team oder zu ChatGPT. Wer viel mit Bildschirmfotos arbeitet, spart damit jeden Tag Zeit. <span class="lnk">https://123knips.com/</span></p>
+      <button type="button" class="knopf" id="text-kopieren">Text kopieren</button>
+    </div>
+  </section>
 
   <h2 class="abschnitt">Für wen ist das?</h2>
   <div class="karte">
@@ -95,25 +138,45 @@
   <footer>
     <a href="./">Zur Knips-Seite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </footer>
-  <script>
-  // Aus der Digistore24-ID den eigenen Link bauen. Nichts wird gespeichert oder verschickt
+</main>
+<script>
+  // Aus der Digistore24-ID den eigenen Link bauen und in die Texte setzen. Nichts wird gespeichert oder verschickt
   (function () {
+    var basis = "https://123knips.com/";
     var feld = document.getElementById("id"), zeile = document.getElementById("link-zeile"),
         link = document.getElementById("mein-link"), knopf = document.getElementById("kopieren");
+    function setzen(adresse) {
+      document.querySelectorAll(".lnk").forEach(function (s) { s.textContent = adresse; });
+    }
     feld.addEventListener("input", function () {
       var id = feld.value.trim();
       var gut = /^[A-Za-z0-9_.-]{2,40}$/.test(id);
+      var adresse = gut ? basis + "?aff=" + id : basis;
       zeile.classList.toggle("da", gut);
-      link.textContent = gut ? "https://123knips.com/?aff=" + id : "";
+      link.textContent = gut ? adresse : "";
+      setzen(adresse);
+      document.getElementById("hinweis-link").textContent = gut ? "dein Link steckt schon drin." : "dein Link kommt hinein, sobald du in Schritt 2 deine ID eingetragen hast.";
     });
-    knopf.addEventListener("click", function () {
-      navigator.clipboard.writeText(link.textContent).then(function () {
-        knopf.textContent = "Kopiert ✓";
-        setTimeout(function () { knopf.textContent = "Kopieren"; }, 1800);
+    function kopiere(text, k, alt) {
+      navigator.clipboard.writeText(text).then(function () {
+        k.textContent = "Kopiert ✓";
+        setTimeout(function () { k.textContent = alt; }, 1800);
+      });
+    }
+    knopf.addEventListener("click", function () { kopiere(link.textContent, knopf, "Kopieren"); });
+    var aktiv = "kurz", textKnopf = document.getElementById("text-kopieren");
+    document.querySelectorAll(".reiter-knopf").forEach(function (r) {
+      r.addEventListener("click", function () {
+        aktiv = r.dataset.ziel;
+        document.querySelectorAll(".reiter-knopf").forEach(function (x) { x.classList.toggle("aktiv", x === r); });
+        document.querySelectorAll(".vorlage").forEach(function (v) { v.hidden = v.dataset.art !== aktiv; });
       });
     });
+    textKnopf.addEventListener("click", function () {
+      var p = document.querySelector('.vorlage[data-art="' + aktiv + '"]');
+      kopiere(p.textContent.trim(), textKnopf, "Text kopieren");
+    });
   })();
-  </script>
-</main>
+</script>
 </body>
 </html>
