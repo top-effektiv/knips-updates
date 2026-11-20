@@ -1,4 +1,7 @@
 {
+ "1.1.35": [
+  "Neu in der Bibliothek: „Kopieren“ für mehrere Bilder. Kreuze zum Beispiel alle Bilder aus einem Meeting an,\nklick auf „Kopieren“ und füge sie mit Strg+V auf einmal ein: bei Claude, ChatGPT, in der Mail oder bei WhatsApp."
+ ],
  "1.1.34": [
   "Rückgängig und Wiederherstellen zeigen jetzt, ob es etwas zu tun gibt: grau heißt nichts da, dunkel heißt los.\nEine kleine Zahl am Pfeil sagt dir, wie viele Schritte du zurück oder vor kannst."
  ],
@@ -149,6 +152,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.35": "20.11.2026",
   "1.1.34": "20.11.2026",
   "1.1.33": "19.11.2026",
   "1.1.32": "19.11.2026",
