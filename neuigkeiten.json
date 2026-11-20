@@ -1,4 +1,7 @@
 {
+ "1.1.34": [
+  "Rückgängig und Wiederherstellen zeigen jetzt, ob es etwas zu tun gibt: grau heißt nichts da, dunkel heißt los.\nEine kleine Zahl am Pfeil sagt dir, wie viele Schritte du zurück oder vor kannst."
+ ],
  "1.1.33": [
   "Knips-Fenster wie Einstellungen, Neuigkeiten oder „Teile Knips“ stehen nicht mehr dauerhaft\nüber deinen anderen Programmen. Wechselst du zu Outlook & Co., kommen diese nach vorne."
  ],
@@ -146,6 +149,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.34": "20.11.2026",
   "1.1.33": "19.11.2026",
   "1.1.32": "19.11.2026",
   "1.1.31": "19.11.2026",
