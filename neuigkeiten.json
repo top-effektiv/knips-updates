@@ -1,4 +1,8 @@
 {
+ "1.1.38": [
+  "Neu: Bild drehen. Neben „Zuschneiden“ gibt es „Links drehen“ und „Rechts drehen“ (Strg+L / Strg+R),\nimmer um eine Vierteldrehung. Ideal für schief fotografierte Dokumente: erst drehen, dann schwärzen.",
+  "Pfeile, Rahmen, Nummern und Texte drehen mit, Strg+Z dreht zurück."
+ ],
  "1.1.37": [
   "Scroll-Screenshot: Seiten mit mitlaufendem Kopf, tickendem Countdown oder einer Leiste, die unten hereinfährt,\nwerden jetzt bis ganz unten aufgenommen. Bisher hörte Knips dort manchmal zu früh auf."
  ],
@@ -159,6 +163,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.38": "23.11.2026",
   "1.1.37": "23.11.2026",
   "1.1.36": "22.11.2026",
   "1.1.35": "20.11.2026",
