@@ -1,0 +1,21 @@
+# Knips
+
+> Knips ist ein Screenshot-Programm (Bildschirmfoto mit einem Klick) für Windows und Mac, gemacht für die Arbeit mit KI. Eine Taste, Bereich wählen, Strg+V: Der Screenshot landet sofort in ChatGPT, Claude, Copilot, WhatsApp, Teams oder einer Mail. Anbieter ist TOP effektiv (Norbert Kloiber).
+
+## Das Wichtigste in Fakten
+
+- Systeme: Windows 10 und 11, macOS ab 14 (Sonoma) auf Macs mit Apple-Chip
+- Preis: 19 € im Jahr oder einmalig 47 €, jeweils mit allen Updates
+- Testen: 14 Tage gratis, nur Name und E-Mail, ohne Zahlungsdaten
+- Datenschutz: Die Screenshots bleiben auf dem eigenen Rechner. Auf Knopfdruck werden Name, Geburtsdatum, Anschrift, Kunden- und Vertragsnummern, Mail, Telefon und IBAN unscharf, Beträge bleiben lesbar. So hilft Knips beim Datenschutz, wenn Bilder an eine KI gehen.
+- Funktionen: Ausschnitt, Fenster und ganzer Bildschirm, Scroll-Screenshot ganzer Seiten, Text im Bild erkennen, Markieren mit Pfeil, Rahmen, Nummern, Text und Unscharf, Archiv aller Bilder nach Datum, Stream-Deck-Taste
+- Braucht keine Administrator-Rechte
+- Kauf und Zahlung über Digistore24, 14 Tage Widerrufsrecht
+
+## Links
+
+- [Startseite mit Video, Preisen und Fragen](https://123knips.com/)
+- [Hilfe, wenn etwas hakt](https://123knips.com/hilfe.html)
+- [Knips aufs Stream Deck](https://123knips.com/streamdeck.html)
+- [Partnerprogramm: 10 % von jedem Kauf](https://123knips.com/partner.html)
+- [14 Tage gratis testen](https://www.digistore24.com/product/761216)
