@@ -1,4 +1,7 @@
 {
+ "1.1.39": [
+  "Mehrere Bilder auf einmal auswählen: Kästchen beim ersten Bild anklicken, dann mit gedrückter Umschalttaste\nbeim letzten. Alle Bilder dazwischen sind markiert, auch über mehrere Tage. Strg+A markiert alle angezeigten Bilder."
+ ],
  "1.1.38": [
   "Neu: Bild drehen. Neben „Zuschneiden“ gibt es „Links drehen“ und „Rechts drehen“ (Strg+L / Strg+R),\nimmer um eine Vierteldrehung. Ideal für schief fotografierte Dokumente: erst drehen, dann schwärzen.",
   "Pfeile, Rahmen, Nummern und Texte drehen mit, Strg+Z dreht zurück."
@@ -163,6 +166,7 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.39": "25.11.2026",
   "1.1.38": "23.11.2026",
   "1.1.37": "23.11.2026",
   "1.1.36": "22.11.2026",
