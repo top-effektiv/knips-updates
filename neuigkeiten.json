@@ -1,4 +1,10 @@
 {
+ "1.1.41": [
+  "Besser schwärzen in Listen: Namen vor einem Trennstrich („Max Mustermann | Termin | …“) werden jetzt erkannt,\nauch auf farbig hinterlegten Zeilen, etwa in Kundenverwaltung oder Excel."
+ ],
+ "1.1.40": [
+  "Fehler behoben: Nach einem abgebrochenen Scroll-Screenshot reagierte Knips manchmal nicht mehr auf die Tasten.\nJetzt erscheint das Fadenkreuz wieder zuverlässig."
+ ],
  "1.1.39": [
   "Mehrere Bilder auf einmal auswählen: Kästchen beim ersten Bild anklicken, dann mit gedrückter Umschalttaste\nbeim letzten. Alle Bilder dazwischen sind markiert, auch über mehrere Tage. Strg+A markiert alle angezeigten Bilder."
  ],
@@ -166,6 +172,8 @@
   "Schalter „Datenschutz immer“ und Erklärung unter jedem Knopf."
  ],
  "_daten": {
+  "1.1.41": "27.11.2026",
+  "1.1.40": "27.11.2026",
   "1.1.39": "25.11.2026",
   "1.1.38": "23.11.2026",
   "1.1.37": "23.11.2026",
